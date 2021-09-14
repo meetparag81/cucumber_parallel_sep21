@@ -26,6 +26,8 @@ import org.apache.poi.EncryptedDocumentException;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellStyle;
+import org.apache.poi.ss.usermodel.CellType;
+import org.apache.poi.ss.usermodel.FillPatternType;
 import org.apache.poi.ss.usermodel.IndexedColors;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
@@ -822,7 +824,7 @@ public class CustomMethods extends CorehelperClass {
 				headerrow=sheet.createRow(RowCount);
 				CellStyle style = wb.createCellStyle();
 				style.setFillForegroundColor(IndexedColors.YELLOW.getIndex());
-				style.setFillPattern(CellStyle.SOLID_FOREGROUND);
+				style.setFillPattern(FillPatternType.SOLID_FOREGROUND);
 				for(int i=0;i<header.size();i++) {
 					headercell = headerrow.createCell(i);
 					headercell.setCellValue(header.get(i));
@@ -832,7 +834,9 @@ public class CustomMethods extends CorehelperClass {
 				headerrow=sheet.createRow(RowCount);
 				for(int j=0;j<value.size();j++) {
 					headercell=headerrow.createCell(j);
-					headercell.setCellType(XSSFCell.CELL_TYPE_STRING);
+					 headercell = (XSSFCell) headerrow.getCell(j, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK);
+					 headercell.setCellType(CellType.STRING);
+					//headercell.setCellType(XSSFCell.CELL_TYPE_STRING);
 					headercell.setCellValue(value.get(j));
 				}
 				try {
@@ -886,7 +890,7 @@ public class CustomMethods extends CorehelperClass {
 				headerrow=sheet.getRow(RowCount);
 				CellStyle style = wb.createCellStyle();
 				style.setFillForegroundColor(IndexedColors.YELLOW.getIndex());
-				style.setFillPattern(CellStyle.SOLID_FOREGROUND);
+				style.setFillPattern(FillPatternType.SOLID_FOREGROUND);
 				for(int i=0;i<header.size();i++) {
 					found = false;
 					String headerValue= header.get(i);
@@ -898,7 +902,8 @@ public class CustomMethods extends CorehelperClass {
 					}
 					if(!found) {
 						headercell = headerrow.createCell(headerrow.getLastCellNum());
-						headercell.setCellType(XSSFCell.CELL_TYPE_STRING);
+						headercell.setCellType(CellType.STRING);
+						//headercell.setCellType(XSSFCell.CELL_TYPE_STRING);
 						headercell.setCellValue(headerValue);
 						headercell.setCellStyle(style);
 					}
@@ -1020,19 +1025,26 @@ public class CustomMethods extends CorehelperClass {
 				wb=new XSSFWorkbook();
 				sheet = wb.createSheet(SheetName);
 				row=sheet.createRow(RowCount);
-				cell=row.createCell(0);
-				cell.setCellType(XSSFCell.CELL_TYPE_STRING);
+				//cell=row.createCell(0);
+				cell = (XSSFCell) row.getCell(0, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK);
+				cell.setCellType(CellType.STRING);
+				//cell.setCellType(XSSFCell.CELL_TYPE_STRING);
 				cell.setCellValue("SUCCESSFULL RECORDS - "+ TotalPassed);
 				RowCount=RowCount+1;
+				
 				row=sheet.createRow(RowCount);
-				cell=row.createCell(0);
-				cell.setCellType(XSSFCell.CELL_TYPE_STRING);
+				cell = (XSSFCell) row.getCell(RowCount, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK);
+				//cell=row.createCell(0);
+				cell.setCellType(CellType.STRING);
+				//cell.setCellType(XSSFCell.CELL_TYPE_STRING);
 				cell.setCellValue("FAILED RECORDS - "+ TotalFailed);
 				if(!Errmessage.isEmpty()) {
 					RowCount=RowCount+1;
 					row=sheet.createRow(RowCount);
 					cell=row.createCell(0);
-					cell.setCellType(XSSFCell.CELL_TYPE_STRING);
+					cell = (XSSFCell) row.getCell(0, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK);
+					cell.setCellType(CellType.STRING);
+					//cell.setCellType(XSSFCell.CELL_TYPE_STRING);
 					cell.setCellValue("FAILURE REASON - "+ Errmessage);
 				}
 				try {
@@ -1082,17 +1094,19 @@ public class CustomMethods extends CorehelperClass {
 				sheet=wb.getSheet(SheetName);
 				int lastrowcount = sheet.getLastRowNum();
 				row=sheet.createRow(lastrowcount+1);
+				cell = (XSSFCell) row.getCell(0, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK);
 				cell=row.createCell(0);
-				cell.setCellType(XSSFCell.CELL_TYPE_STRING);
+				cell.setCellType(CellType.STRING);
 				cell.setCellValue("SUCCESSFULL RECORDS - "+ TotalPassed);
 				row=sheet.createRow(lastrowcount+2);
+				
 				cell=row.createCell(0);
-				cell.setCellType(XSSFCell.CELL_TYPE_STRING);
+				cell.setCellType(CellType.STRING);
 				cell.setCellValue("FAILED RECORDS - "+ TotalFailed);
 				if(!Errmessage.isEmpty()) {
 					row=sheet.createRow(lastrowcount+3);
 					cell=row.createCell(0);
-					cell.setCellType(XSSFCell.CELL_TYPE_STRING);
+					cell.setCellType(CellType.STRING);
 					cell.setCellValue("FAILURE REASON - "+ Errmessage);
 				}
 
