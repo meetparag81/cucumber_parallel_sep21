@@ -1,0 +1,308 @@
+[
+  {
+    "line": 2,
+    "elements": [
+      {
+        "start_timestamp": "2021-07-19T10:59:11.555Z",
+        "before": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "MyHooks.Hooks.databasesetup()"
+            }
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "MyHooks.Hooks.setup()"
+            }
+          }
+        ],
+        "line": 12,
+        "name": "User Logins with diffrent credentials",
+        "description": "",
+        "id": "lognpage-test;user-logins-with-diffrent-credentials;;2",
+        "after": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "MyHooks.Hooks.shutdownthesite()"
+            }
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "MyHooks.Hooks.TearDown()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "I want to write a step with \"name1\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"name1\"",
+                  "offset": 28
+                }
+              ],
+              "location": "Steps.LoginSOsteps.i_want_to_write_a_step_with(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "I check for the \"5\" in step",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"5\"",
+                  "offset": 16
+                }
+              ],
+              "location": "Steps.LoginSOsteps.i_check_for_the_in_step(java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "I verify the \"success\" in step",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"success\"",
+                  "offset": 13
+                }
+              ],
+              "location": "Steps.LoginSOsteps.i_verify_the_in_step(java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-07-19T10:59:11.703Z",
+        "before": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "MyHooks.Hooks.databasesetup()"
+            }
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "MyHooks.Hooks.setup()"
+            }
+          }
+        ],
+        "line": 13,
+        "name": "User Logins with diffrent credentials",
+        "description": "",
+        "id": "lognpage-test;user-logins-with-diffrent-credentials;;3",
+        "after": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "MyHooks.Hooks.shutdownthesite()"
+            }
+          },
+          {
+            "result": {
+              "duration": 15000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "MyHooks.Hooks.TearDown()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "I want to write a step with \"name2\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"name2\"",
+                  "offset": 28
+                }
+              ],
+              "location": "Steps.LoginSOsteps.i_want_to_write_a_step_with(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "I check for the \"7\" in step",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"7\"",
+                  "offset": 16
+                }
+              ],
+              "location": "Steps.LoginSOsteps.i_check_for_the_in_step(java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "I verify the \"Fail\" in step",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Fail\"",
+                  "offset": 13
+                }
+              ],
+              "location": "Steps.LoginSOsteps.i_verify_the_in_step(java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-07-19T10:59:11.750Z",
+        "before": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "MyHooks.Hooks.databasesetup()"
+            }
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "MyHooks.Hooks.setup()"
+            }
+          }
+        ],
+        "line": 14,
+        "name": "User Logins with diffrent credentials",
+        "description": "",
+        "id": "lognpage-test;user-logins-with-diffrent-credentials;;4",
+        "after": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "MyHooks.Hooks.shutdownthesite()"
+            }
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "MyHooks.Hooks.TearDown()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "I want to write a step with \"name3\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"name3\"",
+                  "offset": 28
+                }
+              ],
+              "location": "Steps.LoginSOsteps.i_want_to_write_a_step_with(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "I check for the \"8\" in step",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"8\"",
+                  "offset": 16
+                }
+              ],
+              "location": "Steps.LoginSOsteps.i_check_for_the_in_step(java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "I verify the \"Pass\" in step",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Pass\"",
+                  "offset": 13
+                }
+              ],
+              "location": "Steps.LoginSOsteps.i_verify_the_in_step(java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "LognPage Test",
+    "description": "  I want to use this template for my feature file",
+    "id": "lognpage-test",
+    "keyword": "Feature",
+    "uri": "file:src/resources/java/TestFeature/LoginwithSO.feature",
+    "tags": []
+  }
+]

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="3" time="0.569">
+<testcase classname="LognPage Test" name="User Logins with diffrent credentials" time="0.117">
+<system-out><![CDATA[Given I want to write a step with "name1"...................................passed
+When I check for the "5" in step............................................passed
+Then I verify the "success" in step.........................................passed
+]]></system-out>
+</testcase>
+<testcase classname="LognPage Test" name="User Logins with diffrent credentials 2" time="0.015">
+<system-out><![CDATA[Given I want to write a step with "name2"...................................passed
+When I check for the "7" in step............................................passed
+Then I verify the "Fail" in step............................................passed
+]]></system-out>
+</testcase>
+<testcase classname="LognPage Test" name="User Logins with diffrent credentials 3" time="0">
+<system-out><![CDATA[Given I want to write a step with "name3"...................................passed
+When I check for the "8" in step............................................passed
+Then I verify the "Pass" in step............................................passed
+]]></system-out>
+</testcase>
+</testsuite>
