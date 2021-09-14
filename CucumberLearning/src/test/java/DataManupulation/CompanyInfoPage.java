@@ -1,4 +1,4 @@
-package com.botsftool.dsg.pages;
+package DataManupulation;
 
 import java.text.ParseException;
 
@@ -7,7 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import com.botsftool.dsg.utilities.CustomMethods;
+
 
 public class CompanyInfoPage extends CustomMethods {
 

@@ -1,11 +1,9 @@
-package com.botsftool.dsg.pages;
+package DataManupulation;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-
-import com.botsftool.dsg.utilities.CustomMethods;
 
 public class CareersiteBuilderPage extends CustomMethods {
 

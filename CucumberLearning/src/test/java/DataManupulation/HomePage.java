@@ -1,4 +1,4 @@
-package com.botsftool.dsg.pages;
+package DataManupulation;
 
 import java.io.IOException;
 
@@ -7,9 +7,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-
-import com.botsftool.dsg.utilities.Constants;
-import com.botsftool.dsg.utilities.CustomMethods;
 
 public class HomePage extends CustomMethods {
 

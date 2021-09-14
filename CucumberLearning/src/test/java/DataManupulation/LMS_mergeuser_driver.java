@@ -1,4 +1,4 @@
-package com.botsftool.dsg.scripts;
+package DataManupulation;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -56,20 +56,10 @@ import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.python.modules.thread.thread;
-import org.testng.annotations.ExpectedExceptions;
-
-import com.botsftool.dsg.pages.CareersiteBuilderPage;
-import com.botsftool.dsg.pages.HomePage;
-import com.botsftool.dsg.pages.LearningAdminPage;
-import com.botsftool.dsg.pages.LoginPage;
 //import com.botsftool.dsg.pages.PermissionRoles;
-import com.botsftool.dsg.utilities.CorehelperClass;
-import com.botsftool.dsg.utilities.CustomMethods;
-import com.botsftool.procauto.UserPermissionRole_MassUpdate;
 import com.google.common.base.CharMatcher;
-import com.sun.org.apache.bcel.internal.generic.NEWARRAY;
-import com.thoughtworks.selenium.webdriven.commands.AllowNativeXPath;
+
+
 
 public class LMS_mergeuser_driver extends CorehelperClass {
 

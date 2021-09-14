@@ -1,4 +1,4 @@
-package com.botsftool.dsg.pages;
+package DataManupulation;
 
 import java.io.IOException;
 import java.text.ParseException;
@@ -9,7 +9,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import com.botsftool.dsg.utilities.CustomMethods;
+
 
 public class PermissionRolesfromApplication extends CustomMethods {
 	public String permissionsOptionType1 = "(//div[@class='detailPane']//input/following::label/span[1])";

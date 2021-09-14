@@ -1,4 +1,4 @@
-package com.botsftool.dsg.scripts;
+package DataManupulation;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
