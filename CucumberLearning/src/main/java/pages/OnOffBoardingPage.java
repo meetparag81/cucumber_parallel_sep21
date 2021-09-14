@@ -38,10 +38,20 @@ public class OnOffBoardingPage extends BaseClass {
 	 private WebElement previousCompanyCode;
 	 
 	 @FindBy(xpath="//*[text()='Start Date']/following::input[1]")	 
-		     public WebElement startDate;
+	 private WebElement startDate;
 	 
-	 @FindBy(xpath="//*[text()='First Name']/following::input[1]");
+	 @FindBy(xpath="//*[text()='First Name']/following::input[1]")
 	  private WebElement firstName;
+	 
+	 @FindBy(xpath = "//*[text()='Company Code']/following::input[1]")
+	 private WebElement companycode;
+	 @FindBy(xpath = "//*[text()='Last Name']/following::input[1]")
+	 private WebElement lastName;
+	 @FindBy(xpath = "//label[text()='Personal Email Address']/ancestor::td[1]/following-sibling::td[1]//input[1]")
+	 private WebElement personalEmailaddress;
+
+
+
 
 
 	 
@@ -140,16 +150,16 @@ public class OnOffBoardingPage extends BaseClass {
         EnterText(personalEmailaddress, Constants.firstname + "." + Constants.lastname + "@" + Utilities.GenerateRandomString(6).toLowerCase() + ".com");
         if (tdsstartDate == null || tdsstartDate == "")
         {
-            tdsstartDate = Utilities.generateRandomDate(LocalDateTime.now(), tdstdsstartDateType).ToString("MM/dd/yyyy");
+            tdsstartDate = Utilities.generateRandomDate(LocalDateTime.now().getDayOfMonth(), tdsstartDateType).ToString("MM/dd/yyyy");
         }
         Constants.startDate = tdsstartDate;
         EnterText(startDate, tdsstartDate);
         EnterText(tdscompanycode, tdscompanycode);
-        WebDriverWait wait = new WebDriverWait(driver, new TimeSpan(0, 2, 0));
+        WebDriverWait wait = new WebDriverWait(driver, 60);
         wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//li[contains(.,'" + tdscompanycode + "')]")));
-        SendKeyPressToElement(tdscompanycode, "DOWN");
-        SendKeyPressToElement(tdscompanycode, "DOWN");
-        SendKeyPressToElement(tdscompanycode, "ENTER");
+        SendKeyPressToElement(companycode, "DOWN");
+        SendKeyPressToElement(companycode, "DOWN");
+        SendKeyPressToElement(companycode, "ENTER");
         ClickOnNext();
         return this;
     }

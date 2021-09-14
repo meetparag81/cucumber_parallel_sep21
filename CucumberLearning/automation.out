@@ -101,3 +101,11 @@
 2021-08-18 09:15:17 INFO  WaitHelper:52 - Driver is waited for[[ChromeDriver: chrome on WINDOWS (9ca32daef6f382df4ebde09332d72e49)] -> id: email]to be seen for30
 2021-08-18 09:15:20 INFO  WaitHelper:52 - Driver is waited for[[ChromeDriver: chrome on WINDOWS (26d5a1ecd82654a29128eb14dc955c7b)] -> id: email]to be seen for30
 2021-08-18 09:15:23 INFO  WaitHelper:52 - Driver is waited for[[ChromeDriver: chrome on WINDOWS (c3806772c51ee33e326b4df5027dd16d)] -> id: email]to be seen for30
+2021-09-14 12:05:59 INFO  WaitHelper:52 - Driver is waited for[[ChromeDriver: chrome on WINDOWS (aa47234b94529301fdcc405a0849f4be)] -> id: email]to be seen for30
+2021-09-14 12:06:09 INFO  WaitHelper:52 - Driver is waited for[[ChromeDriver: chrome on WINDOWS (19037b6bf2cea3d0dc3fe203e1905faf)] -> id: email]to be seen for30
+2021-09-14 12:06:18 INFO  WaitHelper:52 - Driver is waited for[[ChromeDriver: chrome on WINDOWS (78eda41778d1c210cc02d2665e2c36c0)] -> id: email]to be seen for30
+2021-09-14 12:06:32 INFO  WaitHelper:52 - Driver is waited for[[ChromeDriver: chrome on WINDOWS (d95329351f3a5ee8943a3b16868dc447)] -> id: email]to be seen for30
+2021-09-14 12:11:27 INFO  WaitHelper:52 - Driver is waited for[[ChromeDriver: chrome on WINDOWS (076fe9a2b888785154c0a84c6b55ffba)] -> id: email]to be seen for30
+2021-09-14 12:11:31 INFO  WaitHelper:52 - Driver is waited for[[ChromeDriver: chrome on WINDOWS (e9516f68d5f6b669f4ebaf006fa6d4c3)] -> id: email]to be seen for30
+2021-09-14 12:11:34 INFO  WaitHelper:52 - Driver is waited for[[ChromeDriver: chrome on WINDOWS (7374f7a714da8e95a7ca912529d6eac1)] -> id: email]to be seen for30
+2021-09-14 12:11:35 INFO  WaitHelper:52 - Driver is waited for[[ChromeDriver: chrome on WINDOWS (a6a3c6ae20dfa713b91edd745033f17a)] -> id: email]to be seen for30

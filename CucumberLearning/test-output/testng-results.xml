@@ -1,36 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="6" passed="6">
+<testng-results skipped="0" failed="1" ignored="0" total="7" passed="6">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="32923" started-at="2021-08-18T03:44:58Z" finished-at="2021-08-18T03:45:31Z">
+  <suite name="Default suite" duration-ms="29918" started-at="2021-09-14T06:41:12Z" finished-at="2021-09-14T06:41:42Z">
     <groups>
       <group name="cucumber">
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunners.parallelTest@2b9627bc]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunners.parallelTest@4f970963]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test name="Default test" duration-ms="32923" started-at="2021-08-18T03:44:58Z" finished-at="2021-08-18T03:45:31Z">
+    <test name="Default test" duration-ms="29918" started-at="2021-09-14T06:41:12Z" finished-at="2021-09-14T06:41:42Z">
       <class name="testRunners.parallelTest">
-        <test-method status="PASS" signature="setUpClass()[pri:0, instance:testRunners.parallelTest@2b9627bc]" name="setUpClass" is-config="true" duration-ms="894" started-at="2021-08-18T03:44:58Z" finished-at="2021-08-18T03:44:59Z">
+        <test-method status="PASS" signature="setUpClass()[pri:0, instance:testRunners.parallelTest@4f970963]" name="setUpClass" is-config="true" duration-ms="735" started-at="2021-09-14T06:41:12Z" finished-at="2021-09-14T06:41:13Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunners.parallelTest@2b9627bc]" name="runScenario" duration-ms="22555" started-at="2021-08-18T03:44:59Z" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-08-18T03:45:21Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["Accounts page title"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Optional[Account Page Feature]"]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunners.parallelTest@2b9627bc]" name="runScenario" duration-ms="24379" started-at="2021-08-18T03:44:59Z" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-08-18T03:45:23Z">
+        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunners.parallelTest@4f970963]" name="runScenario" duration-ms="21522" started-at="2021-09-14T06:41:13Z" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-09-14T06:41:35Z">
           <params>
             <param index="0">
               <value>
@@ -46,7 +30,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunners.parallelTest@2b9627bc]" name="runScenario" duration-ms="25600" started-at="2021-08-18T03:44:59Z" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-08-18T03:45:24Z">
+        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunners.parallelTest@4f970963]" name="runScenario" duration-ms="26866" started-at="2021-09-14T06:41:13Z" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-09-14T06:41:40Z">
           <params>
             <param index="0">
               <value>
@@ -62,7 +46,89 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunners.parallelTest@2b9627bc]" name="runScenario" duration-ms="19083" started-at="2021-08-18T03:44:59Z" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-08-18T03:45:18Z">
+        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunners.parallelTest@4f970963]" name="runScenario" duration-ms="25559" started-at="2021-09-14T06:41:13Z" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-09-14T06:41:39Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Accounts page title"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Optional[Account Page Feature]"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunners.parallelTest@4f970963]" name="runScenario" duration-ms="24884" started-at="2021-09-14T06:41:13Z" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-09-14T06:41:38Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Contact Us scenario with different set of data"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Optional[ContactUsPage]"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method status="FAIL" signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunners.parallelTest@4f970963]" name="runScenario" duration-ms="20862" started-at="2021-09-14T06:41:13Z" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-09-14T06:41:34Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Change the Hire date within 7 days from start date, before payroll is processed"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Optional[Hire Functionality]"]]>
+              </value>
+            </param>
+          </params>
+          <exception class="org.openqa.selenium.InvalidArgumentException">
+            <message>
+              <![CDATA[invalid argument
+  (Session info: chrome=93.0.4577.63)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-6RUK53V', ip: '192.168.1.42', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_301'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 93.0.4577.63, chrome: {chromedriverVersion: 93.0.4577.63 (ff5c0da2ec0ad..., userDataDir: C:\Users\V-PBOR~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:59821}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 32a7f05b3029008923f86fbc5f7f1bc3]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.InvalidArgumentException: invalid argument
+  (Session info: chrome=93.0.4577.63)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-6RUK53V', ip: '192.168.1.42', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_301'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 93.0.4577.63, chrome: {chromedriverVersion: 93.0.4577.63 (ff5c0da2ec0ad..., userDataDir: C:\Users\V-PBOR~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:59821}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 32a7f05b3029008923f86fbc5f7f1bc3
+at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+at java.lang.reflect.Constructor.newInstance(Unknown Source)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:277)
+at parallel.HireSteps.user_has_sucessfully_launched_the(HireSteps.java:48)
+at ✽.User has sucessfully launched the "Change_Hire_Date_B4_Pay_Process" "<Url>"(file:///C:/Users/v-pborawake/git/cucumber_newlearning/CucumberLearning/src/test/resources/parallel/Hire.feature:10)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.InvalidArgumentException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunners.parallelTest@4f970963]" name="runScenario" duration-ms="21215" started-at="2021-09-14T06:41:13Z" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-09-14T06:41:34Z">
           <params>
             <param index="0">
               <value>
@@ -78,23 +144,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunners.parallelTest@2b9627bc]" name="runScenario" duration-ms="29393" started-at="2021-08-18T03:44:59Z" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-08-18T03:45:28Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["Contact Us scenario with different set of data"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Optional[ContactUsPage]"]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunners.parallelTest@2b9627bc]" name="runScenario" duration-ms="18963" started-at="2021-08-18T03:44:59Z" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-08-18T03:45:18Z">
+        <test-method status="PASS" signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunners.parallelTest@4f970963]" name="runScenario" duration-ms="24345" started-at="2021-09-14T06:41:13Z" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-09-14T06:41:38Z">
           <params>
             <param index="0">
               <value>
@@ -110,7 +160,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:testRunners.parallelTest@2b9627bc]" name="tearDownClass" is-config="true" duration-ms="2600" started-at="2021-08-18T03:45:28Z" finished-at="2021-08-18T03:45:31Z">
+        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:testRunners.parallelTest@4f970963]" name="tearDownClass" is-config="true" duration-ms="2279" started-at="2021-09-14T06:41:40Z" finished-at="2021-09-14T06:41:42Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->

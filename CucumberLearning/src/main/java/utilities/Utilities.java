@@ -38,10 +38,10 @@ public class Utilities {
         return iThree + "-" + iTwo.ToString() + "-" + iFour.ToString();
     }
 
-    public static String generateRandomDate(String format)
+    public static String generateRandomDate(int format)
     {
         Random random = new Random();
-        int randomNumber =random.nextInt(bound)
+        int randomNumber =random.nextInt();
         		
          LocalDateTime todaysDate = LocalDateTime.now();
         todaysDate = todaysDate.plusDays(randomNumber);
@@ -222,7 +222,7 @@ public static int generateRandomDate(int start, int end) {
 
     }
 
-    public static string converttoDateFormat(String date, String format)
+    public static String converttoDateFormat(String date, String format)
     {
         DateTime datetoConvert = DateTime.ParseExact(date, @"dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
         return datetoConvert.ToString(format);
