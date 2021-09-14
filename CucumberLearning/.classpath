@@ -111,5 +111,16 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/parag/.m2/repository/org/testng/testng/6.10/testng-6.10.jar" sourcepath="C:/Users/parag/.m2/repository/org/testng/testng/6.10/testng-6.10-sources.jar">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+			<attribute name="maven.groupId" value="org.testng"/>
+			<attribute name="maven.artifactId" value="testng"/>
+			<attribute name="maven.version" value="6.10"/>
+			<attribute name="maven.scope" value="compile"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="var" path="M2_REPO/com/github/javafaker/javafaker/1.0.2/javafaker-1.0.2.jar"/>
+	<classpathentry kind="var" path="M2_REPO/au/com/bytecode/opencsv/2.4/opencsv-2.4.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
