@@ -11,16 +11,16 @@
 	<url>http://maven.apache.org</url>
 
 	<properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <java.version>1.8</java.version>
-        <junit.version>4.13.2</junit.version>
-        <cucumber.version>6.10.4</cucumber.version>
-        <maven.compiler.version>3.8.1</maven.compiler.version>
-        <maven.surefire.version>2.22.2</maven.surefire.version>
-  </properties>
- 
-  <dependencies>
-	 <dependency>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<java.version>1.8</java.version>
+		<junit.version>4.13.2</junit.version>
+		<cucumber.version>6.10.4</cucumber.version>
+		<maven.compiler.version>3.8.1</maven.compiler.version>
+		<maven.surefire.version>2.22.2</maven.surefire.version>
+	</properties>
+
+	<dependencies>
+		<dependency>
 			<groupId>io.cucumber</groupId>
 			<artifactId>cucumber-java</artifactId>
 			<version>${cucumber.version}</version>
@@ -88,34 +88,47 @@
 			<version>4.1.2</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
-			<dependency>  
-    <groupId>log4j</groupId>  
-    <artifactId>log4j</artifactId>  
-    <version>1.2.17</version>  
-</dependency> 
-<!-- https://mvnrepository.com/artifact/com.codoid.products/fillo -->
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.17</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.codoid.products/fillo -->
+		<dependency>
+			<groupId>com.codoid.products</groupId>
+			<artifactId>fillo</artifactId>
+			<version>1.18</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.thoughtworks.selenium/com.springsource.com.thoughtworks.selenium -->
 <dependency>
-    <groupId>com.codoid.products</groupId>
-    <artifactId>fillo</artifactId>
-    <version>1.18</version>
+    <groupId>com.thoughtworks.selenium</groupId>
+    <artifactId>com.springsource.com.thoughtworks.selenium</artifactId>
+    <version>0.9.2</version>
 </dependency>
- 
+		
+		<!-- https://mvnrepository.com/artifact/org.codehaus.groovy/groovy -->
+<dependency>
+    <groupId>org.codehaus.groovy</groupId>
+    <artifactId>groovy</artifactId>
+    <version>2.4.12</version>
+</dependency>
+		
 	</dependencies>
 	<repositories>
 		<repository>
 			<id>jitpack.io</id>
 			<url>https://jitpack.io</url>
-		</repository>  
-	<repository>
-		<id>mulesoft-releases</id>
-		<name>MuleSoft Repository</name>
-		<url>https://repository.mulesoft.org/nexus/content/repositories/public/</url>
-	</repository>
-</repositories>
-  
-    <build>
-	    <plugins>
-		      <plugin>
+		</repository>
+		<repository>
+			<id>mulesoft-releases</id>
+			<name>MuleSoft Repository</name>
+			<url>https://repository.mulesoft.org/nexus/content/repositories/public/</url>
+		</repository>
+	</repositories>
+
+	<build>
+		<plugins>
+			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>${maven.compiler.version}</version>
@@ -152,6 +165,6 @@
 				</configuration> </execution> </executions> </plugin> -->
 
 
-      	</plugins>
-  	</build>
+		</plugins>
+	</build>
 </project>

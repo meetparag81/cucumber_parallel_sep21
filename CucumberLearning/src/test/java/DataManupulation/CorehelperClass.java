@@ -20,6 +20,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
@@ -32,6 +33,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
+
+
 
 public class CorehelperClass {
 	private static ThreadLocal<ThreadedItems> threadDriver;
@@ -227,7 +230,7 @@ public class CorehelperClass {
 		}
 	}
 
-	public static void captureScreen(final String imagesPath,final String screenShotName) {
+	public static void captureScreen(final String imagesPath,final String screenShotName) throws NoSuchWindowException {
 		try {
 			final TakesScreenshot oScn = (TakesScreenshot)threadDriver.get().getDriver();
 			final File oScnShot = oScn.getScreenshotAs(OutputType.FILE);
@@ -238,9 +241,7 @@ public class CorehelperClass {
 			}
 			catch (Exception e) {
 				e.printStackTrace();
-			}
 		}
-		catch (NoSuchWindowException excption) {
 		}
 		catch (UnhandledAlertException ae) {
 		}
@@ -270,6 +271,14 @@ public class CorehelperClass {
 		return ((int) (Math.random()*(maximum - minimum))) + minimum;
 	}
 
+	/**
+	 * @param filepath
+	 * @param SheetName
+	 * @param TotalPassed
+	 * @param TotalFailed
+	 * @param Errmessage
+	 * @throws FileNotFoundException
+	 */
 	public synchronized void WriteStatustoexcel(String filepath, String SheetName, int TotalPassed, int TotalFailed, String Errmessage) throws FileNotFoundException
 	{
 		XSSFWorkbook wb=null;
@@ -286,19 +295,27 @@ public class CorehelperClass {
 				sheet = wb.createSheet(SheetName);
 				row=sheet.createRow(RowCount);
 				cell=row.createCell(0);
+				cell.setCellType(CellType.STRING);			
+				
+				/*cell=row.createCell(0);
 				cell.setCellType(XSSFCell.CELL_TYPE_STRING);
-				cell.setCellValue("SUCCESSFULL RECORDS - "+ TotalPassed);
+				*/cell.setCellValue("SUCCESSFULL RECORDS - "+ TotalPassed);
 				RowCount=RowCount+1;
 				row=sheet.createRow(RowCount);
 				cell=row.createCell(0);
+				cell.setCellType(CellType.STRING);			
+				
+				/*cell=row.createCell(0);
 				cell.setCellType(XSSFCell.CELL_TYPE_STRING);
-				cell.setCellValue("FAILED RECORDS - "+ TotalFailed);
+				*/cell.setCellValue("FAILED RECORDS - "+ TotalFailed);
 				if(!Errmessage.isEmpty()) {
 					RowCount=RowCount+1;
 					row=sheet.createRow(RowCount);
 					cell=row.createCell(0);
+					cell.setCellType(CellType.STRING);			
+					/*cell=row.createCell(0);
 					cell.setCellType(XSSFCell.CELL_TYPE_STRING);
-					cell.setCellValue("FAILURE REASON - "+ Errmessage);
+					*/cell.setCellValue("FAILURE REASON - "+ Errmessage);
 				}
 				try {
 					fos=new FileOutputStream(filepath);
@@ -347,17 +364,25 @@ public class CorehelperClass {
 				sheet=wb.getSheet(SheetName);
 				int lastrowcount = sheet.getLastRowNum();
 				row=sheet.createRow(lastrowcount+1);
+				cell = (XSSFCell) row.getCell(0, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK);
 				cell=row.createCell(0);
-				cell.setCellType(XSSFCell.CELL_TYPE_STRING);
+				cell.setCellType(CellType.STRING);			
+				//cell=row.createCell(0);
+				//cell.setCellType(XSSFCell.CELL_TYPE_STRING);
 				cell.setCellValue("SUCCESSFULL RECORDS - "+ TotalPassed);
 				row=sheet.createRow(lastrowcount+2);
 				cell=row.createCell(0);
-				cell.setCellType(XSSFCell.CELL_TYPE_STRING);
+				cell.setCellType(CellType.STRING);	
+				//cell=row.createCell(0);
+				//cell.setCellType(XSSFCell.CELL_TYPE_STRING);
 				cell.setCellValue("FAILED RECORDS - "+ TotalFailed);
 				if(!Errmessage.isEmpty()) {
 					row=sheet.createRow(lastrowcount+3);
 					cell=row.createCell(0);
+					cell.setCellType(CellType.STRING);				
+					/*cell=row.createCell(0);
 					cell.setCellType(XSSFCell.CELL_TYPE_STRING);
+					*/
 					cell.setCellValue("FAILURE REASON - "+ Errmessage);
 				}
 
