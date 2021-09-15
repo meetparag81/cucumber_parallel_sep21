@@ -25,6 +25,7 @@ import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellStyle;
 import org.apache.poi.ss.usermodel.CreationHelper;
 import org.apache.poi.ss.usermodel.DateUtil;
+import org.apache.poi.ss.usermodel.FillPatternType;
 import org.apache.poi.ss.usermodel.Font;
 import org.apache.poi.ss.usermodel.Hyperlink;
 import org.apache.poi.ss.usermodel.IndexedColors;
@@ -56,6 +57,7 @@ import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.apache.poi.xssf.usermodel.XSSFCell;
 
 
 
@@ -878,7 +880,7 @@ if(rowcounter>=1&&statusflag) {
 			if(statusflag==true) {
 				 XSSFCellStyle styleheaderpass = workbook.createCellStyle();
 				  styleheaderpass.setFillForegroundColor(IndexedColors.LIGHT_GREEN.getIndex());
-				  styleheaderpass.setFillPattern(CellStyle.SOLID_FOREGROUND);				
+				  styleheaderpass.setFillPattern(FillPatternType.SOLID_FOREGROUND);				
 			for(int columncounter=0;columncounter<=noofcells;columncounter++) {
 				 String colname = sheet.getRow(0).getCell(columncounter).toString();
 				if(colname.equals("Status")) {					
@@ -897,7 +899,7 @@ if(rowcounter>=1&&statusflag) {
 			else {
 				XSSFCellStyle styleheaderfail = workbook.createCellStyle();
 				styleheaderfail.setFillForegroundColor(IndexedColors.RED.getIndex());
-				styleheaderfail.setFillPattern(CellStyle.SOLID_FOREGROUND);
+				styleheaderfail.setFillPattern(FillPatternType.SOLID_FOREGROUND);				
 				for(int columncounter=0;columncounter<=noofcells;columncounter++) {
 					String colname = sheet.getRow(0).getCell(columncounter).toString();
 					if(colname.equals("Status")) {
@@ -957,6 +959,7 @@ if(rowcounter>=1&&statusflag) {
 			headerrow=inputsheet.getRow(rowNum);
 			try {
 				headercell = headerrow.getCell(col_Num);
+				headercell = (XSSFCell) headerrow.getCell(col_Num, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK);
 			}
 			catch (Exception e) {
 				// TODO: handle exception
@@ -978,6 +981,7 @@ if(rowcounter>=1&&statusflag) {
 			return "";
 		}*/
 			//System.out.println(cell.getCellType());
+			
 			if(headercell.getCellType()==Cell.CELL_TYPE_STRING) {
 				return headercell.getStringCellValue().trim();
 			}

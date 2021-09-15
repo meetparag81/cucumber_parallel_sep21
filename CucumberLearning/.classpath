@@ -113,14 +113,5 @@
 	</classpathentry>
 	<classpathentry kind="var" path="M2_REPO/com/github/javafaker/javafaker/1.0.2/javafaker-1.0.2.jar"/>
 	<classpathentry kind="var" path="M2_REPO/au/com/bytecode/opencsv/2.4/opencsv-2.4.jar"/>
-	<classpathentry kind="lib" path="C:/Users/v-pborawake/.m2/repository/org/codehaus/groovy/groovy/2.4.12/groovy-2.4.12.jar">
-		<attributes>
-			<attribute name="maven.pomderived" value="true"/>
-			<attribute name="maven.groupId" value="org.codehaus.groovy"/>
-			<attribute name="maven.artifactId" value="groovy"/>
-			<attribute name="maven.version" value="2.4.12"/>
-			<attribute name="maven.scope" value="test"/>
-		</attributes>
-	</classpathentry>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

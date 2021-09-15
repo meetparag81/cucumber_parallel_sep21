@@ -1,4 +1,4 @@
-package com.botsftool.utilities;
+package DataManupulation;
 
 import java.text.DateFormat;
 import java.text.ParseException;
