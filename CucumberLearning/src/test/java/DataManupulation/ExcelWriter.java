@@ -1,4 +1,4 @@
-package com.botsftool.dsg.utilities;
+package DataManupulation;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -9,6 +9,7 @@ import java.util.ArrayList;
 
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellStyle;
+import org.apache.poi.ss.usermodel.FillPatternType;
 import org.apache.poi.ss.usermodel.IndexedColors;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFCell;
@@ -62,7 +63,7 @@ public class ExcelWriter implements Runnable  {
 				headerrow=sheet.createRow(RowCount);
 				CellStyle style = wb.createCellStyle();
 				style.setFillForegroundColor(IndexedColors.YELLOW.getIndex());
-				style.setFillPattern(CellStyle.SOLID_FOREGROUND);
+				style.setFillPattern(FillPatternType.SOLID_FOREGROUND);
 				for(int i=0;i<header.size();i++) {
 					headercell = headerrow.createCell(i);
 					headercell.setCellValue(header.get(i));
@@ -72,7 +73,7 @@ public class ExcelWriter implements Runnable  {
 				headerrow=sheet.createRow(RowCount);
 				for(int j=0;j<value.size();j++) {
 					headercell=headerrow.createCell(j);
-					headercell.setCellType(XSSFCell.CELL_TYPE_STRING);
+					headercell.getCellType();
 					headercell.setCellValue(value.get(j));
 				}
 				fos=new FileOutputStream(filepath);
@@ -90,7 +91,7 @@ public class ExcelWriter implements Runnable  {
 				headerrow=sheet.getRow(RowCount);
 				CellStyle style = wb.createCellStyle();
 				style.setFillForegroundColor(IndexedColors.YELLOW.getIndex());
-				style.setFillPattern(CellStyle.SOLID_FOREGROUND);
+				style.setFillPattern(FillPatternType.SOLID_FOREGROUND);
 				for(int i=0;i<header.size();i++) {
 					found = false;
 					String headerValue= header.get(i);
@@ -102,7 +103,8 @@ public class ExcelWriter implements Runnable  {
 					}
 					if(!found) {
 						headercell = headerrow.createCell(headerrow.getLastCellNum());
-						headercell.setCellType(XSSFCell.CELL_TYPE_STRING);
+						Cell celldata = null;
+						headercell.setCellType(celldata.getCellType().STRING);
 						headercell.setCellValue(headerValue);
 						headercell.setCellStyle(style);
 					}

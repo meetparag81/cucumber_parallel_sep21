@@ -1,4 +1,4 @@
-package utilities;
+/*package utilities;
 
 
 import java.time.LocalDateTime;
@@ -196,7 +196,7 @@ public class Utilities {
         return manager[random.Next(0, manager.Count)];
     }
 
-    /*public static Date generateRandomDate(Date StartRange, String dateType)
+    public static Date generateRandomDate(Date StartRange, String dateType)
     {GregorianCalendar gc = new GregorianCalendar();
 
     int year = randBetween(1900, 2010);
@@ -210,21 +210,21 @@ public class Utilities {
     System.out.println(gc.get(gc.YEAR) + "-" + (gc.get(gc.MONTH) + 1) + "-" + gc.get(gc.DAY_OF_MONTH));
 
 }
-*/
+
 public static int generateRandomDate(int start, int end) {
     return start + (int)Math.round(Math.random() * (end - start));
 }
 
     public static Date convertStringtoDateFormat(String date)
     {
-        DateTime datetoConvert = Date.ParseExact(date, @"dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
+         datetoConvert = Date.ParseExact(date, @"dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
         return datetoConvert;
 
     }
 
     public static String converttoDateFormat(String date, String format)
     {
-        DateTime datetoConvert = DateTime.ParseExact(date, @"dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
+         datetoConvert = DateTime.ParseExact(date, @"dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
         return datetoConvert.ToString(format);
     }
 
@@ -1414,13 +1414,13 @@ public static int generateRandomDate(int start, int end) {
             stringBuilder.Add("LastKnownPernerNo");
         }
 
-        /*
+        
         if (EmailAlias.Equals(""))
         {
             Console.WriteLine(" The mandatory field EmailAlias is empty in the TDS");
             //stringBuilder = string.Join(",", "WorkFactor");
             stringBuilder.Add("EmailAlias");
-        }*/
+        }
         
         string readable = string.Join(",", stringBuilder);
         if (TestSuite.Equals("") || URL.Equals("") || CompanyCode.Equals("") || PositionNo.Equals("") || PositionType.Equals("") || RestURL.Equals("") || WorkFactor.Equals("") || FirstName.Equals("") || LastName.Equals("")|| LastKnownPernerNo.Equals(""))
@@ -1440,8 +1440,8 @@ public static int generateRandomDate(int start, int end) {
         {
             Constants.ICIMSActionType = ICMSTYPE;
         }
-        /*Constants.EventReason = "External Staff to EE";
-        Constants.ICIMSActionType = "External Staff to FTE";*/
+        Constants.EventReason = "External Staff to EE";
+        Constants.ICIMSActionType = "External Staff to FTE";
         Constants.employeeID = LastKnownPernerNo;
         Constants.EmailAlias=EmailAlias;
         string url = RestURL;
@@ -1460,3 +1460,4 @@ public static int generateRandomDate(int start, int end) {
 }
 
 }
+*/

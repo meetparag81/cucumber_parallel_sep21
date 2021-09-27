@@ -24,6 +24,7 @@ import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellStyle;
 import org.apache.poi.ss.usermodel.CreationHelper;
 import org.apache.poi.ss.usermodel.DateUtil;
+import org.apache.poi.ss.usermodel.FillPatternType;
 import org.apache.poi.ss.usermodel.Font;
 import org.apache.poi.ss.usermodel.Hyperlink;
 import org.apache.poi.ss.usermodel.IndexedColors;
@@ -59,7 +60,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 
 import com.sun.org.apache.bcel.internal.generic.NEWARRAY;
-import com.thoughtworks.selenium.webdriven.commands.AllowNativeXPath;
+
 
 public class RMKpermissions_driver_withbrand extends CorehelperClass {
 
@@ -6598,14 +6599,15 @@ public class RMKpermissions_driver_withbrand extends CorehelperClass {
 
 			//	Cell cell = inputrow.getCell(col_Num);
 
+			Cell celldata = null;
 			/*if(cell==null) {
 			return "";
 		}*/
 			//System.out.println(cell.getCellType());
-			if(headercell.getCellType()==Cell.CELL_TYPE_STRING) {
+			if(headercell.getCellType()==celldata.getCellType().STRING) {
 				return headercell.getStringCellValue();
 			}
-			else if(headercell.getCellType()==Cell.CELL_TYPE_NUMERIC || headercell.getCellType()==Cell.CELL_TYPE_FORMULA ){
+			else if(headercell.getCellType()==celldata.getCellType().NUMERIC || headercell.getCellType()==celldata.getCellType().FORMULA ){
 
 				String cellText  = String.valueOf(headercell.getNumericCellValue());
 				if (DateUtil.isCellDateFormatted(headercell)) {
@@ -6626,7 +6628,7 @@ public class RMKpermissions_driver_withbrand extends CorehelperClass {
 
 
 				return cellText;
-			}else if(headercell.getCellType()==Cell.CELL_TYPE_BLANK) {
+			}else if(headercell.getCellType()==celldata.getCellType().BLANK) {
 				return ""; 
 			}
 			else {
@@ -6666,8 +6668,7 @@ public class RMKpermissions_driver_withbrand extends CorehelperClass {
 				font.setColor(IndexedColors.BLACK.getIndex());
 				//XSSFColor red=new XSSFColor(new java.awt.Color(111,140,222));
 				xssfStyles.setFillForegroundColor(IndexedColors.GREY_25_PERCENT.getIndex());
-				xssfStyles.setFillPattern(CellStyle.SOLID_FOREGROUND);
-				//xssfStyle.setFillPattern(FillPatternType.SOLID_FOREGROUND);
+				xssfStyles.setFillPattern(FillPatternType.SOLID_FOREGROUND);				
 				xssfStyles.setFont(font);
 			 if(j==1) {
 				 Cell c=toColor.getCell(j);
@@ -6709,7 +6710,7 @@ public class RMKpermissions_driver_withbrand extends CorehelperClass {
 		font.setColor(IndexedColors.BLACK.getIndex());
 		XSSFColor red=new XSSFColor(new java.awt.Color(111,140,222));
 		xssfStyles.setFillForegroundColor(IndexedColors.GREY_25_PERCENT.getIndex());
-		xssfStyles.setFillPattern(CellStyle.SOLID_FOREGROUND);
+		xssfStyles.setFillPattern(FillPatternType.SOLID_FOREGROUND);
 		//xssfStyle.setFillPattern(FillPatternType.SOLID_FOREGROUND);
 		xssfStyles.setFont(font);
 	    for(int i=0;i<=6;i++) {
@@ -6772,7 +6773,7 @@ public class RMKpermissions_driver_withbrand extends CorehelperClass {
 	 			font.setColor(IndexedColors.BLACK.getIndex());
 	 			XSSFColor red=new XSSFColor(new java.awt.Color(111,140,222));
 	 			xssfStyles.setFillForegroundColor(IndexedColors.LIGHT_CORNFLOWER_BLUE.getIndex());
-	 			xssfStyles.setFillPattern(CellStyle.SOLID_FOREGROUND);
+	 			xssfStyles.setFillPattern(FillPatternType.SOLID_FOREGROUND);
 	 			//xssfStyle.setFillPattern(FillPatternType.SOLID_FOREGROUND);
 	 			xssfStyles.setFont(font);
 	 			for(int j=0;j<=6;j++) {
@@ -6825,7 +6826,8 @@ public class RMKpermissions_driver_withbrand extends CorehelperClass {
 			int destCol = findCol(sheet, Columnname);
 			if (destCol != -1) {
 				Cell cel = row.getCell(destCol);
-				cel.setCellType(Cell.CELL_TYPE_STRING);
+				Cell celldata = null;
+				cel.setCellType(celldata.getCellType());
 				returnValue = cel.toString();
 			} else {
 
@@ -6938,7 +6940,7 @@ public class RMKpermissions_driver_withbrand extends CorehelperClass {
 				font.setColor(IndexedColors.WHITE.getIndex());
 				XSSFColor red=new XSSFColor(new java.awt.Color(255,0,0));
 				xssfStyle.setFillForegroundColor(IndexedColors.RED.getIndex());
-				xssfStyle.setFillPattern(CellStyle.SOLID_FOREGROUND);
+				xssfStyle.setFillPattern(FillPatternType.SOLID_FOREGROUND);
 				//xssfStyle.setFillPattern(FillPatternType.SOLID_FOREGROUND);
 				xssfStyle.setFont(font);
 				XSSFRow rowheader;
@@ -6980,7 +6982,7 @@ public class RMKpermissions_driver_withbrand extends CorehelperClass {
 						String headersection = sheet.getRow(0).getCell(cellnum).toString().trim();
 						XSSFCellStyle styleheader = wb.createCellStyle();
 						styleheader.setFillForegroundColor(IndexedColors.GREY_25_PERCENT.getIndex());
-						styleheader.setFillPattern(CellStyle.SOLID_FOREGROUND);
+						styleheader.setFillPattern(FillPatternType.SOLID_FOREGROUND);
 
 						if(headersection.contains("Homepage(English)")) {
 							headerrow=sheet.createRow(lastrowcount+1);
@@ -7005,7 +7007,7 @@ public class RMKpermissions_driver_withbrand extends CorehelperClass {
 					 */String header1 = "";
 					 CellStyle stylepermissionheader=wb.createCellStyle();
 					 stylepermissionheader.setFillForegroundColor(IndexedColors.YELLOW.getIndex());
-					 stylepermissionheader.setFillPattern(CellStyle.SOLID_FOREGROUND);		
+					 stylepermissionheader.setFillPattern(FillPatternType.SOLID_FOREGROUND);	
 					 for(int cellnum=0;cellnum<noofcolumncount;cellnum++) {
 						 String headerpermission = sheet.getRow(0).getCell(cellnum).toString().trim();
 
@@ -7340,7 +7342,7 @@ public class RMKpermissions_driver_withbrand extends CorehelperClass {
 					int noofcolumncount = rowcount.getPhysicalNumberOfCells();					
 					XSSFCellStyle styleheaderstyopt = wb.createCellStyle();
 					styleheaderstyopt.setFillForegroundColor(IndexedColors.GREY_25_PERCENT.getIndex());
-					styleheaderstyopt.setFillPattern(CellStyle.SOLID_FOREGROUND);
+					styleheaderstyopt.setFillPattern(FillPatternType.SOLID_FOREGROUND);
 
 					if(value.get(0).toString().equals("Style")&&counterstyle==0&&permissionname.get(0).toString().equals("Image Carousel")) {
 						for(int colno=0;colno<noofcolumncount;colno++) {
@@ -7644,7 +7646,7 @@ public class RMKpermissions_driver_withbrand extends CorehelperClass {
 					 int noofcolumncount = rowcount.getPhysicalNumberOfCells();					
 					 XSSFCellStyle styleheaderstyopt = wb.createCellStyle();
 					 styleheaderstyopt.setFillForegroundColor(IndexedColors.GREY_25_PERCENT.getIndex());
-					 styleheaderstyopt.setFillPattern(CellStyle.SOLID_FOREGROUND);
+					 styleheaderstyopt.setFillPattern(FillPatternType.SOLID_FOREGROUND);
 
 					 if(value.get(0).toString().contains("Image")&&counterimg<=0) {
 						 for(int colno=0;colno<noofcolumncount;colno++) {
@@ -7703,7 +7705,7 @@ public class RMKpermissions_driver_withbrand extends CorehelperClass {
 					 int noofcolumncount = rowcount.getPhysicalNumberOfCells();					
 					 XSSFCellStyle styleheaderstyopt = wb.createCellStyle();
 					 styleheaderstyopt.setFillForegroundColor(IndexedColors.GREY_25_PERCENT.getIndex());
-					 styleheaderstyopt.setFillPattern(CellStyle.SOLID_FOREGROUND);
+					 styleheaderstyopt.setFillPattern(FillPatternType.SOLID_FOREGROUND);
 
 					 if(value.get(0).toString().contains("Slide")&&counterimg<=0) {
 						 for(int colno=0;colno<noofcolumncount;colno++) {
@@ -7810,7 +7812,7 @@ public class RMKpermissions_driver_withbrand extends CorehelperClass {
 					 font.setColor(IndexedColors.BLACK.getIndex());
 					 //XSSFColor red=new XSSFColor(new java.awt.Color(255,0,0));
 					 xssfStyle.setFillForegroundColor(IndexedColors.YELLOW.getIndex());
-					 xssfStyle.setFillPattern(CellStyle.SOLID_FOREGROUND);
+					 xssfStyle.setFillPattern(FillPatternType.SOLID_FOREGROUND);
 					 xssfStyle.setFont(font);
 					 headerrow=sheet.createRow((lastrowcount+1));
 					 int i=0;
@@ -7861,7 +7863,7 @@ public class RMKpermissions_driver_withbrand extends CorehelperClass {
 					 font.setColor(IndexedColors.BLACK.getIndex());
 					 //XSSFColor red=new XSSFColor(new java.awt.Color(255,0,0));
 					 xssfStyle.setFillForegroundColor(IndexedColors.GREY_40_PERCENT.getIndex());
-					 xssfStyle.setFillPattern(CellStyle.SOLID_FOREGROUND);
+					 xssfStyle.setFillPattern(FillPatternType.SOLID_FOREGROUND);
 					 xssfStyle.setFont(font);
 					 headerrow=sheet.createRow((lastrowcount+1));
 					 int i=1;
@@ -7887,7 +7889,7 @@ public class RMKpermissions_driver_withbrand extends CorehelperClass {
 					 font.setColor(IndexedColors.BLACK.getIndex());
 					 //XSSFColor red=new XSSFColor(new java.awt.Color(255,0,0));
 					 xssfStyle.setFillForegroundColor(IndexedColors.YELLOW.getIndex());
-					 xssfStyle.setFillPattern(CellStyle.SOLID_FOREGROUND);
+					 xssfStyle.setFillPattern(FillPatternType.SOLID_FOREGROUND);
 					 xssfStyle.setFont(font);
 					 int i=0;
 					 headerrow=sheet.createRow((lastrowcount+1));
@@ -8046,7 +8048,7 @@ public class RMKpermissions_driver_withbrand extends CorehelperClass {
 					 font.setColor(IndexedColors.BLACK.getIndex());
 					 //XSSFColor red=new XSSFColor(new java.awt.Color(255,0,0));
 					 xssfStyle.setFillForegroundColor(IndexedColors.GREY_40_PERCENT.getIndex());
-					 xssfStyle.setFillPattern(CellStyle.SOLID_FOREGROUND);
+					 xssfStyle.setFillPattern(FillPatternType.SOLID_FOREGROUND);
 					 xssfStyle.setFont(font);
 					 headerrow=sheet.createRow((lastrowcount+1));
 					 int i=1;
@@ -8073,7 +8075,7 @@ public class RMKpermissions_driver_withbrand extends CorehelperClass {
 					 font.setColor(IndexedColors.BLACK.getIndex());
 					 //XSSFColor red=new XSSFColor(new java.awt.Color(255,0,0));
 					 xssfStyle.setFillForegroundColor(IndexedColors.YELLOW.getIndex());
-					 xssfStyle.setFillPattern(CellStyle.SOLID_FOREGROUND);
+					 xssfStyle.setFillPattern(FillPatternType.SOLID_FOREGROUND);
 					 xssfStyle.setFont(font);
 					 headerrow=sheet.createRow((lastrowcount+1));
 					 int i=0;
@@ -8125,7 +8127,7 @@ public class RMKpermissions_driver_withbrand extends CorehelperClass {
 					 font.setColor(IndexedColors.BLACK.getIndex());
 					 //XSSFColor red=new XSSFColor(new java.awt.Color(255,0,0));
 					 xssfStyle.setFillForegroundColor(IndexedColors.GREY_40_PERCENT.getIndex());
-					 xssfStyle.setFillPattern(CellStyle.SOLID_FOREGROUND);
+					 xssfStyle.setFillPattern(FillPatternType.SOLID_FOREGROUND);
 					 xssfStyle.setFont(font);
 					 headerrow=sheet.createRow((lastrowcount+1));
 					 int i=1;
@@ -8181,7 +8183,7 @@ public class RMKpermissions_driver_withbrand extends CorehelperClass {
 					 font.setColor(IndexedColors.BLACK.getIndex());
 					 //XSSFColor red=new XSSFColor(new java.awt.Color(255,0,0));
 					 xssfStyle.setFillForegroundColor(IndexedColors.GREY_40_PERCENT.getIndex());
-					 xssfStyle.setFillPattern(CellStyle.SOLID_FOREGROUND);
+					 xssfStyle.setFillPattern(FillPatternType.SOLID_FOREGROUND);
 					 xssfStyle.setFont(font);
 					 headerrow=sheet.createRow((lastrowcount+1));
 					 int i=1;
@@ -8224,7 +8226,7 @@ public class RMKpermissions_driver_withbrand extends CorehelperClass {
 					 font.setColor(IndexedColors.BLACK.getIndex());
 					 //XSSFColor red=new XSSFColor(new java.awt.Color(255,0,0));
 					 xssfStyle.setFillForegroundColor(IndexedColors.YELLOW.getIndex());
-					 xssfStyle.setFillPattern(CellStyle.SOLID_FOREGROUND);
+					 xssfStyle.setFillPattern(FillPatternType.SOLID_FOREGROUND);
 					 xssfStyle.setFont(font);
 					 headerrow=sheet.createRow((lastrowcount+1));
 					 int i=0;
@@ -8389,7 +8391,7 @@ public class RMKpermissions_driver_withbrand extends CorehelperClass {
 					 font.setColor(IndexedColors.BLACK.getIndex());
 					 //XSSFColor red=new XSSFColor(new java.awt.Color(255,0,0));
 					 xssfStyle.setFillForegroundColor(IndexedColors.GREY_25_PERCENT.getIndex());
-					 xssfStyle.setFillPattern(CellStyle.SOLID_FOREGROUND);
+					 xssfStyle.setFillPattern(FillPatternType.SOLID_FOREGROUND);
 					 xssfStyle.setFont(font);
 					 headerrow=sheet.createRow((lastrowcount+1));
 					 headercell = headerrow.createCell(1);
@@ -8478,7 +8480,7 @@ public class RMKpermissions_driver_withbrand extends CorehelperClass {
 					 font.setColor(IndexedColors.BLACK.getIndex());
 					 //XSSFColor red=new XSSFColor(new java.awt.Color(255,0,0));
 					 xssfStyle.setFillForegroundColor(IndexedColors.YELLOW.getIndex());
-					 xssfStyle.setFillPattern(CellStyle.SOLID_FOREGROUND);
+					 xssfStyle.setFillPattern(FillPatternType.SOLID_FOREGROUND);
 					 xssfStyle.setFont(font);
 					 headerrow=sheet.createRow((lastrowcount+1));
 					 int i=0;
@@ -8643,7 +8645,7 @@ public class RMKpermissions_driver_withbrand extends CorehelperClass {
 					 font.setColor(IndexedColors.BLACK.getIndex());
 					 //XSSFColor red=new XSSFColor(new java.awt.Color(255,0,0));
 					 xssfStyle.setFillForegroundColor(IndexedColors.GREY_25_PERCENT.getIndex());
-					 xssfStyle.setFillPattern(CellStyle.SOLID_FOREGROUND);
+					 xssfStyle.setFillPattern(FillPatternType.SOLID_FOREGROUND);
 					 xssfStyle.setFont(font);
 					 int size=permissionname.size();
 					 int k=1;
@@ -8683,7 +8685,7 @@ public class RMKpermissions_driver_withbrand extends CorehelperClass {
 					 int noofcolumncount = rowcount.getPhysicalNumberOfCells();					
 					 XSSFCellStyle styleheaderstyopt = wb.createCellStyle();
 					 styleheaderstyopt.setFillForegroundColor(IndexedColors.GREY_25_PERCENT.getIndex());
-					 styleheaderstyopt.setFillPattern(CellStyle.SOLID_FOREGROUND);
+					 styleheaderstyopt.setFillPattern(FillPatternType.SOLID_FOREGROUND);
 
 					 if(value.get(0).toString().equals("Style")&&counterstyle<=0&&permissionname.get(0).toString().equals("Image Carousel")||permissionname.get(0).toString().equals("Two Columns")) {
 						 for(int colno=0;colno<noofcolumncount;colno++) {
@@ -8776,7 +8778,7 @@ public class RMKpermissions_driver_withbrand extends CorehelperClass {
 				headerrow = sheet.createRow(0);
 				CellStyle style = wb.createCellStyle();
 				style.setFillForegroundColor(IndexedColors.YELLOW.getIndex());
-				style.setFillPattern(CellStyle.SOLID_FOREGROUND);
+				style.setFillPattern(FillPatternType.SOLID_FOREGROUND);
 				int columncell = headerrow.getLastCellNum() + 1;
 				headercell = headerrow.createCell(columncell);
 				headercell.setCellValue(header);
@@ -8792,7 +8794,7 @@ public class RMKpermissions_driver_withbrand extends CorehelperClass {
 				headerrow = sheet.getRow(0);
 				CellStyle style = wb.createCellStyle();
 				style.setFillForegroundColor(IndexedColors.YELLOW.getIndex());
-				style.setFillPattern(CellStyle.SOLID_FOREGROUND);
+				style.setFillPattern(FillPatternType.SOLID_FOREGROUND);
 				int columncell = headerrow.getLastCellNum();
 				headercell = headerrow.createCell(columncell);
 				headercell.setCellValue(header);

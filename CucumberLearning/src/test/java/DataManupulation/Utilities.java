@@ -6,6 +6,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Date;
@@ -14,6 +15,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Properties;
+import java.util.Random;
 import java.util.TimeZone;
 import java.util.concurrent.TimeUnit;
 
@@ -778,4 +780,77 @@ public class Utilities {
 			driver.findElement(By.xpath(xpath)).click();
 		}
 	}
+	public static String GenerateRandomString(int length)
+    {
+		String AlphaNumericString = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+		// create StringBuffer size of AlphaNumericString
+        StringBuilder sb = new StringBuilder(length);
+  
+        for (int i = 0; i < length; i++) {
+  
+            // generate a random number between
+            // 0 to AlphaNumericString variable length
+            int index
+                = (int)(AlphaNumericString.length()
+                        * Math.random());
+  
+            // add Character one by one in end of sb
+            sb.append(AlphaNumericString
+                          .charAt(index));
+        }
+  
+        return sb.toString();
+    }
+	public void GenerateRandomDate()
+    {
+        String dateType = "past";
+          LocalDate StartRange = LocalDate.now();
+          Random rand = new Random();
+        
+        LocalDate todaysDate = StartRange;
+        
+		int randomNum;
+		if (dateType.equals("past")){
+        	
+           randomNum = rand.nextInt((1 - 15) + 1) + 1;
+        long time = System.currentTimeMillis();
+        String uniqueValue = randomNum+""+time;
+        }
+        else if (dateType.equals("future" ))
+        {
+            todaysDate = todaysDate.plusDays(rand.nextInt((1 - 15) + 1) + 1);
+        }
+        else if (dateType.equals("current") || dateType.equals(""))
+        {
+             todaysDate = LocalDate.now();
+        }
+        
+    }
+
+
+	public static LocalDate generateRandomDate(LocalDate startRange, String dateType) {
+        // dateType = "past";
+        
+        Random rand = new Random();
+      
+       LocalDate todaysDate = startRange;
+      int randomNum = rand.nextInt((15 - 1) + 1) + 1;
+		
+		if (dateType.equals("past")){
+      	
+         
+			todaysDate = todaysDate.minusDays(randomNum);
+      
+      }
+      else if (dateType.equals("future" ))
+      {
+          todaysDate = todaysDate.plusDays(randomNum);
+      }
+      else if (dateType.equals("current") || dateType.equals(""))
+      {
+           todaysDate = LocalDate.now();
+      }
+		return todaysDate;
+      
+  }
 }

@@ -1,4 +1,4 @@
-package com.botsftool.utilities;
+package DataManupulation;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -77,14 +77,15 @@ public class ManageSheet {
 	public String getCellValue(Cell cell) throws Exception {
 		String value = new String();
 		if (cell != null) {
-			if (cell.getCellType() == Cell.CELL_TYPE_NUMERIC) {
+			Cell celldata = null;
+			if (cell.getCellType() == celldata.getCellType().STRING) {
 				DataFormatter formatter = new DataFormatter();
 				value = formatter.formatCellValue(cell);
-			} else if (cell.getCellType() == Cell.CELL_TYPE_STRING) {
+			} else if (cell.getCellType() == celldata.getCellType().STRING) {
 				value = cell.getStringCellValue();
-			} else if (cell.getCellType() == Cell.CELL_TYPE_BLANK) {
+			} else if (cell.getCellType() == celldata.getCellType().BLANK) {
 				value = "";
-			} else if (cell.getCellType() == Cell.CELL_TYPE_BOOLEAN) {
+			} else if (cell.getCellType() == celldata.getCellType().BOOLEAN) {
 				value = String.valueOf(cell.getBooleanCellValue());
 			} else {
 				value = cell.getStringCellValue();

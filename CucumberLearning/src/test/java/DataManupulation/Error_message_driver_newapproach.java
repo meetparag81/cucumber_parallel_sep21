@@ -44,7 +44,7 @@ import com.sun.org.apache.bcel.internal.generic.NEWARRAY;
 
 import au.com.bytecode.opencsv.CSVReader;
 
-public class Error_message_driver_newapproach {
+public class Error_message_driver_newapproach {/*
 	
 	 
 
@@ -647,9 +647,9 @@ public class Error_message_driver_newapproach {
 			font.setUnderline(Font.U_SINGLE);
 			font.setColor(IndexedColors.BLUE.getIndex());
 			style.setFont(font);
-			/*style.setFillForegroundColor(new XSSFColor(new java.awt.Color(146, 208, 80)));
+			style.setFillForegroundColor(new XSSFColor(new java.awt.Color(146, 208, 80)));
 			style.setFillPattern(CellStyle.SOLID_FOREGROUND);
-			*/ 
+			 
 
 
 			for(int headercounter=0;headercounter<totalcells;headercounter++) {
@@ -696,7 +696,7 @@ public class Error_message_driver_newapproach {
 					
 				}
 				else if (columninputvalue.equalsIgnoreCase("Issue")) {
-					/*for (Map.Entry<String, String> entry : issueandcount.entrySet()) {
+					for (Map.Entry<String, String> entry : issueandcount.entrySet()) {
 						String issuetext = entry.getKey();
 						String errorvalue = entry.getValue();
 					FileInputStream fils1= new FileInputStream(File);
@@ -704,7 +704,7 @@ public class Error_message_driver_newapproach {
 					XSSFSheet summarysheet = workbooksummary1.getSheet("Consolidated Summary");
 					int totalcells1 = summarysheet.getRow(0).getPhysicalNumberOfCells();
 					int lastrowcount1 = summarysheet.getPhysicalNumberOfRows();
-					int lastrowcountissue = summarysheet.getPhysicalNumberOfRows();*/
+					int lastrowcountissue = summarysheet.getPhysicalNumberOfRows();
 					for(int counter=0;counter<issue.size();counter++) {
 						FileInputStream fils1= new FileInputStream(File);
 						XSSFWorkbook workbooksummary1 = new XSSFWorkbook(fils1);
@@ -897,4 +897,4 @@ public class Error_message_driver_newapproach {
 
 
 
-}
+*/}

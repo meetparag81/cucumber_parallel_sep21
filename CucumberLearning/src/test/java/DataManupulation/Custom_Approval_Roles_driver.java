@@ -61,7 +61,7 @@ import org.apache.poi.xssf.usermodel.XSSFCell;
 
 
 
-public class Custom_Approval_Roles_driver extends CorehelperClass {
+public class Custom_Approval_Roles_driver extends CorehelperClass {/*
 
 	WebDriver driver;
 	public Custom_Approval_Roles_driver(WebDriver driver) {
@@ -344,8 +344,8 @@ public class Custom_Approval_Roles_driver extends CorehelperClass {
 					// TODO: handle exception
 				}
 				
-				/*Thread.sleep(1000);				
-				boolean Haderflag = LAP.ExpandHeader.getAttribute("class").contains("sapUiHidden");*/
+				Thread.sleep(1000);				
+				boolean Haderflag = LAP.ExpandHeader.getAttribute("class").contains("sapUiHidden");
 				Thread.sleep(1000);
 				try {
 					Expandheader.click();
@@ -967,19 +967,19 @@ if(rowcounter>=1&&statusflag) {
 			if(headercell==null) {
 				return "";
 			}
-			/*if(col_Num==-1) {
+			if(col_Num==-1) {
 			return "";
 		}
 		sheet = workbook.getSheetAt(index);
 		row = sheet.getRow(rowNum-1);
 		if(row==null)
-			return "";*/
+			return "";
 
 			//	Cell cell = inputrow.getCell(col_Num);
 
-			/*if(cell==null) {
+			if(cell==null) {
 			return "";
-		}*/
+		}
 			//System.out.println(cell.getCellType());
 			
 			if(headercell.getCellType()==Cell.CELL_TYPE_STRING) {
@@ -1050,4 +1050,4 @@ if(rowcounter>=1&&statusflag) {
 		
 	}
 
-}
+*/}

@@ -1,5 +1,6 @@
 package pages;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 import org.openqa.selenium.By;
@@ -9,9 +10,9 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import DataManupulation.Utilities;
 import testBase.BaseClass;
 import utilities.Constants;
-import utilities.Utilities;
 
 public class OnOffBoardingPage extends BaseClass {
 	private WebDriver driver;
@@ -48,25 +49,7 @@ public class OnOffBoardingPage extends BaseClass {
 	 @FindBy(xpath = "//*[text()='Last Name']/following::input[1]")
 	 private WebElement lastName;
 	 @FindBy(xpath = "//label[text()='Personal Email Address']/ancestor::td[1]/following-sibling::td[1]//input[1]")
-	 private WebElement personalEmailaddress;
-
-
-
-
-
-	 
-	 
-		        
-
-	 
-	
-		        
-
-	
-	         
-
-	
-	        
+	 private WebElement personalEmailaddress;       
 
 
 	public OnOffBoardingPage(WebDriver driver) {
@@ -75,7 +58,7 @@ public class OnOffBoardingPage extends BaseClass {
 	}
 	
 	
-	 public OnOffBoardingPage clickonUSOnboardingTab()
+	public OnOffBoardingPage clickonUSOnboardingTab()
      {
          driver.switchTo().defaultContent();
          driver.switchTo().frame(driver.findElement(By.id("iframeForKMS")));
@@ -84,7 +67,7 @@ public class OnOffBoardingPage extends BaseClass {
          return this;
      }
 	 
-	 public OnOffBoardingPage SelectProcessfromOnOffBoardingDropdown() throws InterruptedException
+	  public OnOffBoardingPage SelectProcessfromOnOffBoardingDropdown() throws InterruptedException
 	    {
 	        WaitForjQuerytoLoad();
 	        WaitForClickable(OnOffBoardingDashboard);
@@ -141,7 +124,7 @@ public class OnOffBoardingPage extends BaseClass {
 	}
 
 
-	public void NewHireSetupInformation(String tdsstartDateType, String tdsstartDate, String tdscompanycode) {
+	public OnOffBoardingPage NewHireSetupInformation(String dateType, String tdsstartDate, String tdscompanycode) throws InterruptedException {
         WaitForClickable(Next);
         Constants.firstname = Utilities.GenerateRandomString(5).toLowerCase();
         EnterText(firstName, Constants.firstname);
@@ -150,17 +133,27 @@ public class OnOffBoardingPage extends BaseClass {
         EnterText(personalEmailaddress, Constants.firstname + "." + Constants.lastname + "@" + Utilities.GenerateRandomString(6).toLowerCase() + ".com");
         if (tdsstartDate == null || tdsstartDate == "")
         {
-            tdsstartDate = Utilities.generateRandomDate(LocalDateTime.now().getDayOfMonth(), tdsstartDateType).ToString("MM/dd/yyyy");
+            tdsstartDate = Utilities.generateRandomDate(LocalDate.now(), dateType).toString();
+            
         }
         Constants.startDate = tdsstartDate;
         EnterText(startDate, tdsstartDate);
-        EnterText(tdscompanycode, tdscompanycode);
+        EnterText(startDate, tdscompanycode);
         WebDriverWait wait = new WebDriverWait(driver, 60);
         wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//li[contains(.,'" + tdscompanycode + "')]")));
         SendKeyPressToElement(companycode, "DOWN");
         SendKeyPressToElement(companycode, "DOWN");
         SendKeyPressToElement(companycode, "ENTER");
         ClickOnNext();
+        return this;
+    }
+	
+	public OnOffBoardingPage ClickOnNext() throws InterruptedException
+    {
+        WaitForClickable(Next);
+        Thread.sleep(500);
+        SendKeyPressToElement(Next, "ENTER");
+        Thread.sleep(1000);
         return this;
     }
 	

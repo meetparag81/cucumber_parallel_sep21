@@ -16,6 +16,7 @@ import org.apache.log4j.Logger;
 import org.junit.After;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.NoSuchElementException;
@@ -48,7 +49,7 @@ public class BrowserSetUp {
 			profile.setPreference("browser.startup.page", 0); // Empty start
 																// page
 			profile.setPreference("browser.startup.homepage_override.mstone", "ignore");
-			driver = new FirefoxDriver(profile);
+			driver = new FirefoxDriver((Capabilities) profile);
 			driver.manage().window().maximize();
 		}
 		return driver;

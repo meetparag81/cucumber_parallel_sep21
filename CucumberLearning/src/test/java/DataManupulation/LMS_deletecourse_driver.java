@@ -25,6 +25,7 @@ import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellStyle;
 import org.apache.poi.ss.usermodel.CreationHelper;
 import org.apache.poi.ss.usermodel.DateUtil;
+import org.apache.poi.ss.usermodel.FillPatternType;
 import org.apache.poi.ss.usermodel.Font;
 import org.apache.poi.ss.usermodel.Hyperlink;
 import org.apache.poi.ss.usermodel.IndexedColors;
@@ -56,20 +57,8 @@ import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.python.modules.thread.thread;
-import org.testng.annotations.ExpectedExceptions;
-
-import com.botsftool.dsg.pages.CareersiteBuilderPage;
-import com.botsftool.dsg.pages.HomePage;
-import com.botsftool.dsg.pages.LearningAdminPage;
-import com.botsftool.dsg.pages.LoginPage;
-//import com.botsftool.dsg.pages.PermissionRoles;
-import com.botsftool.dsg.utilities.CorehelperClass;
-import com.botsftool.dsg.utilities.CustomMethods;
-import com.botsftool.procauto.UserPermissionRole_MassUpdate;
 import com.google.common.base.CharMatcher;
 import com.sun.org.apache.bcel.internal.generic.NEWARRAY;
-import com.thoughtworks.selenium.webdriven.commands.AllowNativeXPath;
 
 public class LMS_deletecourse_driver extends CorehelperClass {
 
@@ -135,7 +124,7 @@ public class LMS_deletecourse_driver extends CorehelperClass {
 	static int countrbodytext=0;
 	static int counterimage=0;
 	StringBuilder sb=new StringBuilder();
-	static Logger logger = Logger.getLogger(LMS_deletecourse_driver_POC1.class.getName());
+	static Logger logger = Logger.getLogger(LMS_deletecourse_driver.class.getName());
 	private static WebElement Headertext;
 	private static WebElement permissionele;
 	private static String xpath;
@@ -733,7 +722,7 @@ catch (Exception e) {
 				for(int columncounter=0;columncounter<=noofcells;columncounter++) {
 					XSSFCellStyle styleheaderpass = workbook.createCellStyle();
 					styleheaderpass.setFillForegroundColor(IndexedColors.LIGHT_GREEN.getIndex());
-					styleheaderpass.setFillPattern(CellStyle.SOLID_FOREGROUND);
+					styleheaderpass.setFillPattern(FillPatternType.SOLID_FOREGROUND);
 					String colname = sheet.getRow(0).getCell(columncounter).toString();
 					if(colname.equals("Status")) {					
 
@@ -752,7 +741,7 @@ catch (Exception e) {
 			else {
 				XSSFCellStyle styleheaderfail = workbook.createCellStyle();
 				styleheaderfail.setFillForegroundColor(IndexedColors.RED.getIndex());
-				styleheaderfail.setFillPattern(CellStyle.SOLID_FOREGROUND);
+				styleheaderfail.setFillPattern(FillPatternType.SOLID_FOREGROUND);
 				for(int columncounter=0;columncounter<=noofcells;columncounter++) {
 					String colname = sheet.getRow(0).getCell(columncounter).toString();
 					if(colname.equals("Status")) {
@@ -824,14 +813,15 @@ catch (Exception e) {
 
 			//	Cell cell = inputrow.getCell(col_Num);
 
+			Cell celldata = null;
 			/*if(cell==null) {
 			return "";
 		}*/
 			//System.out.println(cell.getCellType());
-			if(headercell.getCellType()==Cell.CELL_TYPE_STRING) {
+			if(headercell.getCellType()==celldata.getCellType().STRING) {
 				return headercell.getStringCellValue();
 			}
-			else if(headercell.getCellType()==Cell.CELL_TYPE_NUMERIC || headercell.getCellType()==Cell.CELL_TYPE_FORMULA ){
+			else if(headercell.getCellType()==celldata.getCellType().NUMERIC || headercell.getCellType()==celldata.getCellType().FORMULA ){
 
 				String cellText  = String.valueOf(headercell.getNumericCellValue());
 				if (DateUtil.isCellDateFormatted(headercell)) {
@@ -852,7 +842,7 @@ catch (Exception e) {
 
 
 				return cellText;
-			}else if(headercell.getCellType()==Cell.CELL_TYPE_BLANK) {
+			}else if(headercell.getCellType()==celldata.getCellType().BLANK) {
 				return ""; 
 			}
 			else {

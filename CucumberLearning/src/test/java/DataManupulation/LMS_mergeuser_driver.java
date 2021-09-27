@@ -1,7 +1,6 @@
 package DataManupulation;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -12,10 +11,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
-import java.util.Locale;
-import java.util.Map.Entry;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.log4j.Logger;
@@ -23,41 +19,28 @@ import org.apache.poi.EncryptedDocumentException;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellStyle;
-import org.apache.poi.ss.usermodel.CreationHelper;
+import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.ss.usermodel.DateUtil;
-import org.apache.poi.ss.usermodel.Font;
-import org.apache.poi.ss.usermodel.Hyperlink;
+import org.apache.poi.ss.usermodel.FillPatternType;
 import org.apache.poi.ss.usermodel.IndexedColors;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
-import org.apache.poi.ss.usermodel.Workbook;
-import org.apache.poi.ss.usermodel.WorkbookFactory;
-import org.apache.poi.ss.util.CellRangeAddressList;
-import org.apache.poi.util.SystemOutLogger;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFCellStyle;
-import org.apache.poi.xssf.usermodel.XSSFColor;
-import org.apache.poi.xssf.usermodel.XSSFDataValidation;
-import org.apache.poi.xssf.usermodel.XSSFDataValidationConstraint;
-import org.apache.poi.xssf.usermodel.XSSFDataValidationHelper;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
-//import com.botsftool.dsg.pages.PermissionRoles;
-import com.google.common.base.CharMatcher;
 
 
 
@@ -482,8 +465,9 @@ if(rowcounter>=1&&statusflag) {
 			for(int columncounter=0;columncounter<=noofcells;columncounter++) {
 				  XSSFCellStyle styleheaderpass = workbook.createCellStyle();
 				  styleheaderpass.setFillForegroundColor(IndexedColors.LIGHT_GREEN.getIndex());
-				  styleheaderpass.setFillPattern(CellStyle.SOLID_FOREGROUND);
-				String colname = sheet.getRow(0).getCell(columncounter).toString();
+				  styleheaderpass.setFillPattern(FillPatternType.SOLID_FOREGROUND);
+				  
+				String  colname = sheet.getRow(0).getCell(columncounter).toString();
 				if(colname.equals("Status")) {					
 					
 					Cell statuscell = sheet.getRow(rowcounter).createCell(columncounter);
@@ -501,7 +485,7 @@ if(rowcounter>=1&&statusflag) {
 			else {
 				XSSFCellStyle styleheaderfail = workbook.createCellStyle();
 				styleheaderfail.setFillForegroundColor(IndexedColors.RED.getIndex());
-				styleheaderfail.setFillPattern(CellStyle.SOLID_FOREGROUND);
+				styleheaderfail.setFillPattern(FillPatternType.SOLID_FOREGROUND);
 				for(int columncounter=0;columncounter<=noofcells;columncounter++) {
 					String colname = sheet.getRow(0).getCell(columncounter).toString();
 					if(colname.equals("Status")) {
@@ -582,10 +566,13 @@ if(rowcounter>=1&&statusflag) {
 			return "";
 		}*/
 			//System.out.println(cell.getCellType());
-			if(headercell.getCellType()==Cell.CELL_TYPE_STRING) {
+			XSSFCell cell = null;
+			Cell celldata = null;
+			
+			if(headercell.getCellType()==celldata.getCellType().STRING) {
 				return headercell.getStringCellValue();
 			}
-			else if(headercell.getCellType()==Cell.CELL_TYPE_NUMERIC || headercell.getCellType()==Cell.CELL_TYPE_FORMULA ){
+			else if(headercell.getCellType()==celldata.getCellType().NUMERIC || headercell.getCellType()==celldata.getCellType().FORMULA ){
 
 				String cellText  = String.valueOf(headercell.getNumericCellValue());
 				if (DateUtil.isCellDateFormatted(headercell)) {
@@ -598,13 +585,13 @@ if(rowcounter>=1&&statusflag) {
 					cellText = cal.get(Calendar.DAY_OF_MONTH) + "/" +cal.get(Calendar.MONTH)+1 + "/" + 	cellText;
 
 					//System.out.println(cellText);
-
+					return cellText;
 				}
 
 
 
-				return cellText;
-			}else if(headercell.getCellType()==Cell.CELL_TYPE_BLANK) {
+				
+			}else if(headercell.getCellType()==celldata.getCellType().BLANK) {
 				return ""; 
 			}
 			else {
@@ -617,6 +604,7 @@ if(rowcounter>=1&&statusflag) {
 			e.printStackTrace();
 			return "row "+rowNum+" or column "+colName +" does not exist in xls";
 		}
+		return colName;
 	}
 
 	public static void moveToElement(WebDriver driver,WebElement element) {

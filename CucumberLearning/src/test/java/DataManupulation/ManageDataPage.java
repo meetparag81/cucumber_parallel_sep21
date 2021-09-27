@@ -6,9 +6,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import com.botsftool.dsg.utilities.Constants;
-import com.botsftool.dsg.utilities.CustomMethods;
-
 public class ManageDataPage extends CustomMethods {
 
 	public ManageDataPage(WebDriver driver) {

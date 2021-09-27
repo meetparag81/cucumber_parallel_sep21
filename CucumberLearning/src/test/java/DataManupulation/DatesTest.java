@@ -4,7 +4,7 @@ import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.Random;
 
-public class DatesTest {
+public class DatesTest {/*
 
 	public static void main(String[] args) {
 		
@@ -25,4 +25,4 @@ public class DatesTest {
 		
 	}
 	
-}
+*/}

@@ -27,6 +27,7 @@ import org.apache.poi.hssf.usermodel.HSSFRow;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
@@ -188,6 +189,7 @@ public class FileHandlingUtilities {
 		}
 
 		try {
+			XSSFCell celldata = null;
 			HSSFWorkbook hwb = new HSSFWorkbook();
 			HSSFSheet sheet = hwb.createSheet("new sheet");
 			for (int k = 0; k < arList.size(); k++) {
@@ -197,17 +199,18 @@ public class FileHandlingUtilities {
 					HSSFCell cell = row.createCell((short) p);
 					String data = ardata.get(p).toString();
 					if (data.startsWith("=")) {
-						cell.setCellType(Cell.CELL_TYPE_STRING);
+						cell.setCellType(celldata.getCellType().STRING);
 						data = data.replaceAll("\"", "");
 						data = data.replaceAll("=", "");
 						cell.setCellValue(data);
 					} else if (data.startsWith("\"")) {
 						data = data.replaceAll("\"", "");
-						cell.setCellType(Cell.CELL_TYPE_STRING);
+						
+						cell.setCellType(celldata.getCellType().STRING);
 						cell.setCellValue(data);
 					} else {
 						data = data.replaceAll("\"", "");
-						cell.setCellType(Cell.CELL_TYPE_NUMERIC);
+						cell.setCellType(celldata.getCellType().NUMERIC);
 						cell.setCellValue(data);
 					}
 				}
