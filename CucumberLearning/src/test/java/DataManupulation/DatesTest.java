@@ -1,25 +1,29 @@
 package DataManupulation;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.Random;
 
 public class DatesTest {/*
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws ParseException {
 		
-		generateRandomDate(LocalDateTime.now().getDayOfMonth(), tdsstartDateType).ToString("MM/dd/yyyy");
+		String tdsstartDateType = "23/10/2020";
+		generateRandomDate( tdsstartDateType);
 	}
 	
 	
-	public static void generateRandomDate(Date StartRange,String dateType){
+	public static void generateRandomDate(String date) throws ParseException{
 		
 		Random random = new Random();
         int randomNumber = random.nextInt();
-         todaysDate = StartRange;
-        if (dateType.Equals("past", StringComparison.OrdinalIgnoreCase))
+          LocalDateTime todaysDate = LocalDateTime.now();
+          System.out.println();
+        if (new SimpleDateFormat("MM/yyyy").parse(date).before(new Date()))
         {
-            todaysDate = todaysDate.AddDays(-randomNumber);
+            todaysDate = todaysDate.plusDays(15);
         }
         
 		
