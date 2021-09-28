@@ -35,7 +35,7 @@
 <a href="#"><span class="badge badge-primary">CucumberLearning Report</span></a>
 </li>
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">Sep 14, 2021 12:11:13 PM</span></a>
+<a href="#"><span class="badge badge-primary">Sep 27, 2021 12:23:48 PM</span></a>
 </li>
 </ul>
 </div>
@@ -52,11 +52,6 @@
 <span class="ico"><i class="fa fa-list"></i></span>
 </a>
 </li>
-<li class="nav-item dropdown" onclick="toggleView('category-view')">
-<a id="nav-category" class="dropdown-toggle" href="#">
-<span class="ico"><i class="fa fa-tag"></i></span>
-</a>
-</li>
 <li class="nav-item dropdown" onclick="toggleView('exception-view')">
 <a id="nav-exception" class="dropdown-toggle" href="#">
 <span class="ico"><i class="fa fa-bug"></i></span>
@@ -71,19 +66,19 @@
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Started</p>
-<h3>Sep 14, 2021 12:11:13 PM</h3>
+<h3>Sep 27, 2021 12:23:48 PM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Ended</p>
-<h3>Sep 14, 2021 12:11:40 PM</h3>
+<h3>Sep 27, 2021 12:27:31 PM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0 text-pass">Features Passed</p>
-<h3>3</h3>
+<h3>0</h3>
 </div></div>
 </div>
 <div class="col-md-3">
@@ -105,12 +100,12 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='75%'>
-<b>3</b> features passed
+<div><small data-tooltip='0%'>
+<b>0</b> features passed
 </small>
 </div>
 <div>
-<small data-tooltip='25%'><b>1</b> features failed,
+<small data-tooltip='100%'><b>1</b> features failed,
 <b>0</b> skipped, <b data-tooltip='0%'>0</b> others
 </small>
 </div>
@@ -128,9 +123,9 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='85%'><b>6</b> scenarios passed</small></div>
+<div><small data-tooltip='0%'><b>0</b> scenarios passed</small></div>
 <div>
-<small data-tooltip='14%'><b>1</b> scenarios failed,
+<small data-tooltip='100%'><b>1</b> scenarios failed,
 <b>0</b> skipped, <b data-tooltip='%'>0</b> others
 </small>
 </div>
@@ -148,10 +143,10 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='58%'><b>23</b> steps passed</small></div>
+<div><small data-tooltip='27%'><b>5</b> steps passed</small></div>
 <div>
-<small data-tooltip='2%'><b>1</b> steps failed,
-<b>15</b> skipped, <b data-tooltip='%'>0</b> others
+<small data-tooltip='5%'><b>1</b> steps failed,
+<b>12</b> skipped, <b data-tooltip='%'>0</b> others
 </small>
 </div>
 </div>
@@ -167,27 +162,10 @@
 </div></div>
 <script>
 var timeline = {
-"Login page feature":24.052,"Hire Functionality":20.525,"Account Page Feature":25.24,"ContactUsPage":26.538
+"Hire Functionality":221.698
 };
 </script>
 <div class="row">
-<div class="col-md-4 category-container">
-<div class="card">
-<div class="card-header"><p>Tags</p></div>
-<div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
-<thead><tr class="bg-gray"><th>Name</th><th>Passed</th><th>Failed</th><th>Skipped</th><th>Others</th><th>Passed %</th></tr></thead><tbody>
-<tr>
-<td>@accounts</td>
-<td>2</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>100%</td>
-</tr>
-</tbody>
-</table></div>
-</div>
-</div>
 <div class="col-md-4 sysenv-container">
 <div class="card">
 <div class="card-header"><p>System/Environment</p></div>
@@ -219,21 +197,21 @@ var timeline = {
 <script>
 var statusGroup = {
 parentCount: 5,
-passParent: 3,
+passParent: 0,
 failParent: 1,
 warningParent: 0,
 skipParent: 0,
 childCount: 5,
-passChild: 6,
+passChild: 0,
 failChild: 1,
 warningChild: 0,
 skipChild: 0,
 infoChild: 0,
 grandChildCount: 5,
-passGrandChild: 23,
+passGrandChild: 5,
 failGrandChild: 1,
 warningGrandChild: 0,
-skipGrandChild: 15,
+skipGrandChild: 12,
 infoGrandChild: 0,
 eventsCount: 5,
 };
@@ -247,104 +225,22 @@ eventsCount: 5,
 <li class="dropdown">
 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exclamation-circle"></i></a>
 <ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
-<a class="dropdown-item" status="pass" href="#"><span>Pass</span><span class="status success"></span></a>
 <a class="dropdown-item" status="fail" href="#"><span>Fail</span><span class="status danger"></span></a>
 <div class="dropdown-divider"></div>
 <a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
 </ul>
 </li>
-<li class="dropdown">
-<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-tag"></i></a>
-<ul id="tag-toggle" class="dropdown-menu dropdown-md p-v-0">
-<a class="dropdown-item" href="#">@accounts</a>
-</ul>
-</li>
 </ul>
 </div>    <div class="test-list-wrapper scrollable">
       <ul class="test-list-item">
-        <li class="test-item"  status="pass" test-id="1"
-          author=""
-          tag=""
-          device="">
-          <div class="test-detail">
-            <p class="name">Login page feature</p>
-            <p class="text-sm">
-              <span>12:11:14 PM</span> / <span>00:00:24:052</span>
-              <span class="badge pass-bg log float-right">Pass</span>
-            </p>
-          </div>
-          <div class="test-contents d-none">
-<div class="detail-head">
-<div class="p-v-10">
-<div class="info">
-<h5 class="test-status text-pass">Login page feature</h5>
-<span class='badge badge-success'>09.14.2021 12:11:14</span>
-<span class='badge badge-danger'>09.14.2021 12:11:38</span>
-<span class='badge badge-default'>00:00:24:052</span>
-&middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
-</div>
-<div class="m-t-10 m-l-5"></div>
-</div>
-</div>
-<div class="accordion mt-4">
-  <div class="card">
-    <div class="card-header" role="tab">
-      <div class="card-title">
-        <div class="node" id="2"><span class="badge log pass-bg mr-2">Pass</span>Forgot Password link</div>
-      </div>
-    </div>
-        <div class="collapse">
-          <div class="card-body">
-              <div class="step pass-bg" title="parallel.LoginPageSteps.user_is_on_login_page()">
-                <span>Given user is on login page</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="parallel.LoginPageSteps.forgot_your_password_link_should_be_displayed()">
-                <span>Then forgot your password link should be displayed</span>
-      <div>
-      </div>
-              </div>
-          </div>
-        </div>
-  </div>
-  <div class="card">
-    <div class="card-header" role="tab">
-      <div class="card-title">
-        <div class="node" id="11"><span class="badge log pass-bg mr-2">Pass</span>Login page title</div>
-      </div>
-    </div>
-        <div class="collapse">
-          <div class="card-body">
-              <div class="step pass-bg" title="parallel.LoginPageSteps.user_is_on_login_page()">
-                <span>Given user is on login page</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="parallel.LoginPageSteps.user_gets_the_title_of_the_page()">
-                <span>When user gets the title of the page</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="parallel.LoginPageSteps.page_title_should_be(java.lang.String)">
-                <span>Then page title should be "Login - My Store"</span>
-      <div>
-      </div>
-              </div>
-          </div>
-        </div>
-  </div>
-</div>
-          </div>
-        </li>
-        <li class="test-item"  status="fail" test-id="3"
+        <li class="test-item"  status="fail" test-id="1"
           author=""
           tag=""
           device="">
           <div class="test-detail">
             <p class="name">Hire Functionality</p>
             <p class="text-sm">
-              <span>12:11:14 PM</span> / <span>00:00:20:525</span>
+              <span>12:23:49 PM</span> / <span>00:03:41:698</span>
               <span class="badge fail-bg log float-right">Fail</span>
             </p>
           </div>
@@ -353,10 +249,10 @@ eventsCount: 5,
 <div class="p-v-10">
 <div class="info">
 <h5 class="test-status text-fail">Hire Functionality</h5>
-<span class='badge badge-success'>09.14.2021 12:11:14</span>
-<span class='badge badge-danger'>09.14.2021 12:11:34</span>
-<span class='badge badge-default'>00:00:20:525</span>
-&middot; <span class='uri-anchor badge badge-default'>#test-id=3</span>
+<span class='badge badge-success'>09.27.2021 12:23:49</span>
+<span class='badge badge-danger'>09.27.2021 12:27:31</span>
+<span class='badge badge-default'>00:03:41:698</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
 </div>
 <div class="m-t-10 m-l-5"> This feature is to test Hire functionality</div>
 </div>
@@ -365,7 +261,7 @@ eventsCount: 5,
   <div class="card">
     <div class="card-header" role="tab">
       <div class="card-title">
-        <div class="node" id="4"><span class="badge log fail-bg mr-2">Fail</span>Change the Hire date within 7 days from start date, before payroll is processed</div>
+        <div class="node" id="2"><span class="badge log fail-bg mr-2">Fail</span>Change the Hire date within 7 days from start date, before payroll is processed</div>
           <div class="status-avatar float-right mr-4">
             <i class="fa fa-paperclip"></i>
           </div>
@@ -375,7 +271,7 @@ eventsCount: 5,
             <div class="card-body l1">
               <div class="card-header">
                 <div class="card-title outline-child">
-                  <div class="node" id="5"><span class="badge log fail-bg mr-2">Fail</span>Change the Hire date within 7 days from start date, before payroll is processed</div>
+                  <div class="node" id="3"><span class="badge log fail-bg mr-2">Fail</span>Change the Hire date within 7 days from start date, before payroll is processed</div>
                     <div class="status-avatar float-right">
                       <i class="fa fa-paperclip"></i>
                     </div>
@@ -387,18 +283,34 @@ eventsCount: 5,
       <div>
       </div>
                   </div>
-                  <div class="step fail-bg">
-                    <span>Given User has sucessfully launched the "Change_Hire_Date_B4_Pay_Process" "<Url>"</span>
+                  <div class="step pass-bg">
+                    <span>Given User has sucessfully launched the "Change_Hire_Date_B4_Pay_Process" "<Enviornment>"</span>
       <div>
-        <textarea disabled class="code-block">org.openqa.selenium.InvalidArgumentException: invalid argument
-  (Session info: chrome=93.0.4577.63)
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And User Proxy in as HR OPS CurrentWave</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And User Selects On/OffBoarding from the selection list</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step fail-bg">
+                    <span>And User Selects Process from the On/OffBoarding Dashboard</span>
+      <div>
+        <textarea disabled class="code-block">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"#onbMenuItem4\-txt"}
+  (Session info: chrome=94.0.4606.61)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'DESKTOP-6RUK53V', ip: '192.168.1.42', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_301'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 93.0.4577.63, chrome: {chromedriverVersion: 93.0.4577.63 (ff5c0da2ec0ad..., userDataDir: C:\Users\V-PBOR~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:59821}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 32a7f05b3029008923f86fbc5f7f1bc3
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 94.0.4606.61, chrome: {chromedriverVersion: 93.0.4577.63 (ff5c0da2ec0ad..., userDataDir: C:\Users\V-PBOR~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:50156}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 1042cd2b2b9f925c60e60caec34d250c
+*** Element info: {Using=id, value=onbMenuItem4-txt}
+	at sun.reflect.GeneratedConstructorAccessor21.newInstance(Unknown Source)
 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
 	at java.lang.reflect.Constructor.newInstance(Unknown Source)
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
@@ -407,26 +319,18 @@ Session ID: 32a7f05b3029008923f86fbc5f7f1bc3
 	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:277)
-	at parallel.HireSteps.user_has_sucessfully_launched_the(HireSteps.java:48)
-	at ?.User has sucessfully launched the "Change_Hire_Date_B4_Pay_Process" "<Url>"(file:///C:/Users/v-pborawake/git/cucumber_newlearning/CucumberLearning/src/test/resources/parallel/Hire.feature:10)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:372)
+	at org.openqa.selenium.By$ById.findElement(By.java:188)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy20.click(Unknown Source)
+	at pages.OnOffBoardingPage.SelectProcessfromOnOffBoardingDropdown(OnOffBoardingPage.java:77)
+	at parallel.HireSteps.user_selects_process_from_the_on_off_boarding_dashboard(HireSteps.java:103)
+	at ✽.User Selects Process from the On/OffBoarding Dashboard(file:///C:/Users/v-pborawake/git/cucumber_newlearning/CucumberLearning/src/test/resources/parallel/Hire.feature:13)
 </textarea>
       
-      </div>
-                  </div>
-                  <div class="step skip-bg">
-                    <span>And User Proxy in as HR OPS CurrentWave</span>
-      <div>Step skipped
-      </div>
-                  </div>
-                  <div class="step skip-bg">
-                    <span>And User Selects On/OffBoarding from the selection list</span>
-      <div>Step skipped
-      </div>
-                  </div>
-                  <div class="step skip-bg">
-                    <span>And User Selects Process from the On/OffBoarding Dashboard</span>
-      <div>Step skipped
       </div>
                   </div>
                   <div class="step skip-bg">
@@ -507,201 +411,6 @@ Session ID: 32a7f05b3029008923f86fbc5f7f1bc3
 </div>
           </div>
         </li>
-        <li class="test-item"  status="pass" test-id="6"
-          author=""
-          tag=""
-          device="">
-          <div class="test-detail">
-            <p class="name">Account Page Feature</p>
-            <p class="text-sm">
-              <span>12:11:14 PM</span> / <span>00:00:25:240</span>
-              <span class="badge pass-bg log float-right">Pass</span>
-            </p>
-          </div>
-          <div class="test-contents d-none">
-<div class="detail-head">
-<div class="p-v-10">
-<div class="info">
-<h5 class="test-status text-pass">Account Page Feature</h5>
-<span class='badge badge-success'>09.14.2021 12:11:14</span>
-<span class='badge badge-danger'>09.14.2021 12:11:39</span>
-<span class='badge badge-default'>00:00:25:240</span>
-&middot; <span class='uri-anchor badge badge-default'>#test-id=6</span>
-</div>
-<div class="m-t-10 m-l-5"></div>
-</div>
-</div>
-<div class="accordion mt-4">
-  <div class="card">
-    <div class="card-header" role="tab">
-      <div class="card-title">
-        <div class="node" id="7"><span class="badge log pass-bg mr-2">Pass</span>Accounts section count</div>
-      </div>
-    </div>
-        <div class="collapse">
-          <div class="card-body">
-              <div class="step pass-bg" title="parallel.AccountsPageSteps.user_has_already_logged_in_to_application(io.cucumber.datatable.DataTable)">
-                <span>Given user has already logged in to application</span>
-      <div><table class='markup-table table '><tr><td>username</td><td>password</td></tr><tr><td>borawakepp4@gmail.com</td><td>borawake81</td></tr></table>
-      </div>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="parallel.AccountsPageSteps.user_is_on_accounts_page()">
-                <span>Given user is on Accounts page</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="parallel.AccountsPageSteps.user_gets_accounts_section(io.cucumber.datatable.DataTable)">
-                <span>Then user gets accounts section</span>
-      <div><table class='markup-table table '><tr><td>ORDER HISTORY AND DETAILS</td></tr><tr><td>MY CREDIT SLIPS</td></tr><tr><td>MY ADDRESSES</td></tr><tr><td>MY PERSONAL INFORMATION</td></tr><tr><td>MY WISHLISTS</td></tr><tr><td>Home</td></tr></table>
-      </div>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="parallel.AccountsPageSteps.accounts_section_count_should_be(java.lang.Integer)">
-                <span>And accounts section count should be 5</span>
-      <div>
-      </div>
-              </div>
-          </div>
-        </div>
-  </div>
-  <div class="card">
-    <div class="card-header" role="tab">
-      <div class="card-title">
-        <div class="node" id="17"><span class="badge log pass-bg mr-2">Pass</span>Accounts page title</div>
-      </div>
-    </div>
-        <div class="collapse">
-          <div class="card-body">
-              <div class="step pass-bg" title="parallel.AccountsPageSteps.user_has_already_logged_in_to_application(io.cucumber.datatable.DataTable)">
-                <span>Given user has already logged in to application</span>
-      <div><table class='markup-table table '><tr><td>username</td><td>password</td></tr><tr><td>borawakepp4@gmail.com</td><td>borawake81</td></tr></table>
-      </div>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="parallel.AccountsPageSteps.user_is_on_accounts_page()">
-                <span>Given user is on Accounts page</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="parallel.LoginPageSteps.user_gets_the_title_of_the_page()">
-                <span>When user gets the title of the page</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="parallel.LoginPageSteps.page_title_should_be(java.lang.String)">
-                <span>Then page title should be "My account - My Store"</span>
-      <div>
-      </div>
-              </div>
-          </div>
-        </div>
-  </div>
-</div>
-          </div>
-        </li>
-        <li class="test-item"  status="pass" test-id="8"
-          author=""
-          tag=""
-          device="">
-          <div class="test-detail">
-            <p class="name">ContactUsPage</p>
-            <p class="text-sm">
-              <span>12:11:14 PM</span> / <span>00:00:26:538</span>
-              <span class="badge pass-bg log float-right">Pass</span>
-            </p>
-          </div>
-          <div class="test-contents d-none">
-<div class="detail-head">
-<div class="p-v-10">
-<div class="info">
-<h5 class="test-status text-pass">ContactUsPage</h5>
-<span class='badge badge-success'>09.14.2021 12:11:14</span>
-<span class='badge badge-danger'>09.14.2021 12:11:40</span>
-<span class='badge badge-default'>00:00:26:538</span>
-&middot; <span class='uri-anchor badge badge-default'>#test-id=8</span>
-</div>
-<div class="m-t-10 m-l-5"></div>
-</div>
-</div>
-<div class="accordion mt-4">
-  <div class="card">
-    <div class="card-header" role="tab">
-      <div class="card-title">
-        <div class="node" id="9"><span class="badge log pass-bg mr-2">Pass</span>Contact Us scenario with different set of data</div>
-      </div>
-    </div>
-        <div class="scenario_outline collapse">
-            <div class="card-body l1">
-              <div class="card-header">
-                <div class="card-title outline-child">
-                  <div class="node" id="10"><span class="badge log pass-bg mr-2">Pass</span>Contact Us scenario with different set of data</div>
-                </div>
-              </div>
-              <div class="card-body mt-3 collapse">
-                  <div class="step pass-bg">
-                    <span>Given user has already logged in to application</span>
-      <div><table class='markup-table table '><tr><td>username</td><td>password</td></tr><tr><td>borawakepp4@gmail.com</td><td>borawake81</td></tr></table>
-      </div>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>When User fills the form "Contacts" and 1</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And Users clicks on SendButton</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>Then it shows a successful message "Your message has been successfully sent to our team."</span>
-      <div>
-      </div>
-                  </div>
-              </div>
-            </div>
-            <div class="card-body l1">
-              <div class="card-header">
-                <div class="card-title outline-child">
-                  <div class="node" id="12"><span class="badge log pass-bg mr-2">Pass</span>Contact Us scenario with different set of data</div>
-                </div>
-              </div>
-              <div class="card-body mt-3 collapse">
-                  <div class="step pass-bg">
-                    <span>Given user has already logged in to application</span>
-      <div><table class='markup-table table '><tr><td>username</td><td>password</td></tr><tr><td>borawakepp4@gmail.com</td><td>borawake81</td></tr></table>
-      </div>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>When User fills the form "Contacts" and 0</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And Users clicks on SendButton</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>Then it shows a successful message "Your message has been successfully sent to our team."</span>
-      <div>
-      </div>
-                  </div>
-              </div>
-            </div>
-        </div>
-  </div>
-</div>
-          </div>
-        </li>
       </ul>
     </div>
   </div>
@@ -711,69 +420,7 @@ Session ID: 32a7f05b3029008923f86fbc5f7f1bc3
 </div>
 <div class="test-content-detail"><div class="detail-body"></div></div>
 </div></div>
-<div class="test-wrapper row view category-view attributes-view">
-<div class="test-list">
-<div class="test-list-tools">
-<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Category</span></a></li></ul>
-<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">1</span></a></li></ul>
-</div>
-<div class="test-list-wrapper scrollable">
-<ul class="test-list-item">
-<li class="test-item">
-<div class="test-detail">
-<span class="meta">
-<span class='badge log pass-bg'>2</span>
-</span>
-<p class="name">@accounts</p>
-<p class="duration text-sm">2 tests</p>
-</div>
-<div class="test-contents d-none">
-<div class="info">
-<h4>@accounts</h4>
-<span status="pass" class='badge log pass-bg'>2 passed</span>
-</div>
-<table class='table table-sm mt-4'>
-<thead>
-<tr>
-<th class="status-col">Status</th>
-<th class="timestamp-col">Timestamp</th>
-<th>TestName</th>
-</tr>
-</thead>
-<tbody>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>12:11:14 PM</td>
-<td>
-<a href="#" class="linked" test-id='6' id='7'>Accounts section count</a>
-<div class="">
-<span class="badge badge-default">Account Page Feature.Accounts section count</span>
-</div>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>12:11:14 PM</td>
-<td>
-<a href="#" class="linked" test-id='6' id='17'>Accounts page title</a>
-<div class="">
-<span class="badge badge-default">Account Page Feature.Accounts page title</span>
-</div>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</li>
-</ul>
-</div>
-</div>
-<div class="test-content scrollable">
-<div class="test-content-detail">
-<div class="detail-body"></div>
-</div>
-</div>
-</div><div class="test-wrapper row view exception-view attributes-view">
+<div class="test-wrapper row view exception-view attributes-view">
 <div class="test-list">
 <div class="test-list-tools">
 <ul class="tools pull-left"><li><a href=""><span class="font-size-14">Exception</span></a></li></ul>
@@ -786,12 +433,12 @@ Session ID: 32a7f05b3029008923f86fbc5f7f1bc3
 <span class="meta">
 <span class='badge log badge-danger'>1</span>
 </span>
-<p class="name">org.openqa.selenium.InvalidArgumentException</p>
+<p class="name">org.openqa.selenium.NoSuchElementException</p>
 <p class="duration text-sm">1 tests</p>
 </div>
 <div class="test-contents d-none">
 <div class="info">
-<h4>org.openqa.selenium.InvalidArgumentException</h4>
+<h4>org.openqa.selenium.NoSuchElementException</h4>
 <span status="fail" class='badge log badge-danger'>1 failed</span>
 </div>
 <table class='table table-sm mt-4'>
@@ -805,11 +452,11 @@ Session ID: 32a7f05b3029008923f86fbc5f7f1bc3
 <tbody>
 <tr class="tag-test-status" status="fail">
 <td><span class="badge log fail-bg">Fail</span></td>
-<td>12:11:22 PM</td>
+<td>12:24:28 PM</td>
 <td>
-<a href="#" class="linked" test-id='3' id='32'>Given User has sucessfully launched the "Change_Hire_Date_B4_Pay_Process" "<Url>"</a>
+<a href="#" class="linked" test-id='1' id='10'>And User Selects Process from the On/OffBoarding Dashboard</a>
 <div class="">
-<span class="badge badge-default">Hire Functionality.Change the Hire date within 7 days from start date, before payroll is processed.Given User has sucessfully launched the "Change_Hire_Date_B4_Pay_Process" "<Url>"</span>
+<span class="badge badge-default">Hire Functionality.Change the Hire date within 7 days from start date, before payroll is processed.And User Selects Process from the On/OffBoarding Dashboard</span>
 </div>
 </td>
 </tr>

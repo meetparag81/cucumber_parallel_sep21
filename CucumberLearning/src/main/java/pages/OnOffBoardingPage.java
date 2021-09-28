@@ -126,11 +126,13 @@ public class OnOffBoardingPage extends BaseClass {
 
 	public OnOffBoardingPage NewHireSetupInformation(String dateType, String tdsstartDate, String tdscompanycode) throws InterruptedException {
         WaitForClickable(Next);
+        SendKeyPressToElement(Next,"ENTER");
         Constants.firstname = Utilities.GenerateRandomString(5).toLowerCase();
         EnterText(firstName, Constants.firstname);
         Constants.lastname = Utilities.GenerateRandomString(5).toLowerCase();
         EnterText(lastName, Constants.lastname);
         EnterText(personalEmailaddress, Constants.firstname + "." + Constants.lastname + "@" + Utilities.GenerateRandomString(6).toLowerCase() + ".com");
+        
         if (tdsstartDate == null || tdsstartDate == "")
         {
             tdsstartDate = Utilities.generateRandomDate(LocalDate.now(), dateType).toString();

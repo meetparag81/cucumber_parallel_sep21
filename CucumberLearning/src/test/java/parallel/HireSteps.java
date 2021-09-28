@@ -32,6 +32,7 @@ public class HireSteps {
 	
 	
 	
+	
 	@When("User validates an Hourly Intern TDS Validation with {string} {int}")
 	public void user_validates_an_hourly_intern_tds_validation_with(String string, Integer int1) {
 	    
@@ -40,12 +41,36 @@ public class HireSteps {
 	
 		
 		@Given("User has sucessfully launched the {string} {string}")
-		public void user_has_sucessfully_launched_the(String sheetname, String URL) throws InvalidFormatException, IOException {
+		public void user_has_sucessfully_launched_the(String sheetname, String Enviornment) throws InvalidFormatException, IOException {
 			Constants.Sheetname=sheetname;
 			ExcelReader reader = new ExcelReader();		
 			  testdata = reader.getData(ResourceHelper.GetResourcePath(excelpath), sheetname);
-			String url = testdata.get(0).get("URL");
-			DriverFactory.getDriver().get(url);
+			 Enviornment = testdata.get(0).get("Enviornments");
+			
+			String URL = "";
+            if (Enviornment.equals("SIT"))
+            {
+                 URL = CR.Init_prop().getProperty("SITURL");
+               
+            }
+            else if (Enviornment.equals("PREVIEW"))
+            {
+            	URL = CR.Init_prop().getProperty("PREVIEWURL");
+                
+               
+            }
+            else if (Enviornment.equals("UAT"))
+            {
+            	
+            	URL = CR.Init_prop().getProperty("UATURL");
+                
+                
+            }
+            else
+            {
+                Assert.fail("Environment is Not specified in Config");
+            }
+			DriverFactory.getDriver().get(URL);
 
 		}
 
@@ -108,6 +133,9 @@ public class HireSteps {
 		
 		OnOffBoardingPage.SwitchToFrame();
 		OnOffBoardingPage.USPreverificationSteps();
+		tdsstartDate = testdata.get(0).get("tdsstartDate");
+		tdsstartDateType = testdata.get(0).get("tdsstartDateType");
+		tdscompanycode = testdata.get(0).get("tdscompanycode");
 		OnOffBoardingPage.NewHireSetupInformation(tdsstartDateType, tdsstartDate, tdscompanycode);
 	}
 

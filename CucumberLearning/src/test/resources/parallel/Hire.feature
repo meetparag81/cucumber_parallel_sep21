@@ -7,7 +7,7 @@ Feature: Hire Functionality
   
   Scenario Outline: Change the Hire date within 7 days from start date, before payroll is processed
     When User validates an Hourly Intern TDS Validation with "<sheetname>" <rownumber> 
-    Given User has sucessfully launched the "<sheetname>" "<Url>"
+    Given User has sucessfully launched the "<sheetname>" "<Enviornment>"
     And User Proxy in as HR OPS CurrentWave
 	And User Selects On/OffBoarding from the selection list
 	And User Selects Process from the On/OffBoarding Dashboard
