@@ -10,7 +10,7 @@ import org.junit.Assert;
 import factory.DriverFactory;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
-import pages.HomePageHire;
+import pages.HomePage;
 import pages.LoginPage;
 import pages.LoginPageHire;
 import pages.OnOffBoardingPage;
@@ -25,8 +25,9 @@ public class HireSteps {
 	LoginPageHire Lph= new LoginPageHire(DriverFactory.getDriver());	
 	private List<Map<String, String>> testdata;
 	private String excelpath="\\src\\test\\resources\\Testdata\\Data.xlsx";
+	ExcelReader reader = new ExcelReader();	
 	private String Sheetname;
-	private HomePageHire hph;
+	private HomePage homepage;
 	private PeopleProfilePage Peoplepage;
 	private OnOffBoardingPage OnOffBoardingPage; 
 	
@@ -34,16 +35,16 @@ public class HireSteps {
 	
 	
 	@When("User validates an Hourly Intern TDS Validation with {string} {int}")
-	public void user_validates_an_hourly_intern_tds_validation_with(String string, Integer int1) {
+	public void user_validates_an_hourly_intern_tds_validation_with(String sheetname, Integer rownumber) throws InvalidFormatException, IOException {
 	    
-	    
+		testdata = reader.getData(ResourceHelper.GetResourcePath(excelpath), sheetname);
 	}
 	
 		
 		@Given("User has sucessfully launched the {string} {string}")
 		public void user_has_sucessfully_launched_the(String sheetname, String Enviornment) throws InvalidFormatException, IOException {
 			Constants.Sheetname=sheetname;
-			ExcelReader reader = new ExcelReader();		
+				
 			  testdata = reader.getData(ResourceHelper.GetResourcePath(excelpath), sheetname);
 			 Enviornment = testdata.get(0).get("Enviornments");
 			
@@ -82,11 +83,11 @@ public class HireSteps {
 		
 		String username = CR.Init_prop().getProperty("username");
 		String password = CR.Init_prop().getProperty("password");
-		hph=Lph.LoginThePage(username, password);
+		homepage=Lph.LoginThePage(username, password);
 		ExcelReader reader = new ExcelReader();
 		//testdata=reader.getData(excelpath, Constants.Sheetname);
 		String proxyuser = testdata.get(0).get("proxyuser");
-		Peoplepage=hph.ProxyNow(proxyuser);
+		Peoplepage=homepage.ProxyNow(proxyuser);
 		
 	}
 

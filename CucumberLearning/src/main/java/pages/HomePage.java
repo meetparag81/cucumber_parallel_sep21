@@ -12,7 +12,7 @@ import factory.DriverFactory;
 import testBase.BaseClass;
 import utilities.Constants;
 
-public class HomePageHire extends BaseClass {
+public class HomePage extends BaseClass {
 	@FindBy(id = "utilityLinksMenuId")
 	private WebElement UtilityMenu;
 
@@ -34,7 +34,7 @@ public class HomePageHire extends BaseClass {
 
 
 	private WebDriver driver;
-	public HomePageHire(WebDriver driver) {
+	public HomePage(WebDriver driver) {
 		super(driver);
 		this.driver=driver;
 

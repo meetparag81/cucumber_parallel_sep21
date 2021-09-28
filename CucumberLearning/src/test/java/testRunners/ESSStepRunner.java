@@ -12,7 +12,6 @@ import io.cucumber.junit.CucumberOptions;
 		plugin={"pretty","com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:","timeline:test-output-thread/"},
 		monochrome=true,		
 		dryRun = false)
-
-public class HireStepRuneer {
+public class ESSStepRunner {
 
 }

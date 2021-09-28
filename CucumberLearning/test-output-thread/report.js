@@ -1,15 +1,15 @@
 $(document).ready(function() {
 CucumberHTML.timelineItems.pushArray([
   {
-    "id": "d647a4fb-8adb-4702-be1a-f7013804c3e6",
-    "feature": "Hire Functionality",
-    "scenario": "Change the Hire date within 7 days from start date, before payroll is processed",
-    "start": 1632725629264,
+    "id": "24e868e0-d0d6-4b59-b002-d343751dea43",
+    "feature": "ESS Data Change",
+    "scenario": "BPRTESS02 - Update National ID",
+    "start": 1632839232037,
     "group": 1,
     "content": "",
     "tags": "",
-    "end": 1632725851024,
-    "className": "failed"
+    "end": 1632839238258,
+    "className": "pending"
   }
 ]);
 CucumberHTML.timelineGroups.pushArray([

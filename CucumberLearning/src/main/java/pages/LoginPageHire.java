@@ -51,13 +51,13 @@ public class LoginPageHire extends BaseClass {
 		loginbutton.click();
 
 	}
-	public HomePageHire LoginThePage(String username, String password){
+	public HomePage LoginThePage(String username, String password){
 
 		getUsername(username);
 		getPassword(password);
 		clickonTheLoginButton();
 
-		return  new HomePageHire(driver);
+		return  new HomePage(driver);
 
 	}
 

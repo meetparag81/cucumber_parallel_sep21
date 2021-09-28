@@ -1,10 +1,10 @@
 Feature: ESS Data Change
 	To Test the ESS data change functionality
 	
-	Scenario Outline: 
+	
 	Scenario Outline: BPRTESS02 - Update National ID
 	When Update Personal Information TDS Validation "<sheetname>" <rownumber> 
-	Given User has sucessfully launched the '<Enviornment>' and landed at Homepage
+	Given User has sucessfully launched the "<sheetname>" "<Enviornment>"
 	And User gets a randon employee using '<EmployeeID>' '<Environments>' '<testcompanyCODE>' '<ej_PositionType>' '<cust_EmployeeClass>' '<EmploymentType>'
 	And Entered the randomly generated Employee ID in the Search Field and click on Search
 	And Capture the user name and Email id
