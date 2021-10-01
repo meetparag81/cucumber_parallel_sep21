@@ -1,10 +1,13 @@
 package RestApi;
 
-import com.sun.jersey.api.client.config.ClientConfig;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
 
 public class RestAPI {
 
-	public static String GetEmployeeIDwithinyear(String URL, String URIc) {{
+	public static String GetEmployeeIDwithinyear(String URL, String URIc) {
          String EmployeeID = "";
          System.setProperty("https.protocols", "SSLv1");
          System.setProperty("https.protocols", "SSLv2");
@@ -12,16 +15,31 @@ public class RestAPI {
         //====================================================================================================================================
         // This is where we get the total employee count based on the filters 
         //====================================================================================================================================
-        String queryc = URL + URIc;
-        
-        ClientConfig clientConfig = new ClientConfig();
-        clientConfig.register(MyClientResponseFilter.class);
-        clientConfig.register(new AnotherClientFilter());
+        String queryc = URL + URIc;     
+        try {
+        	//URL to fetch data from .
+            URL url = new URL("http://localhost:3002/RestWebserviceDemo/rest/json/product/dynamicData?size=5");
+            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+            conn.setRequestMethod("GET");
+            conn.setRequestProperty("Accept", "application/json");
+            if (conn.getResponseCode() != 200) {
+                throw new RuntimeException("Failed : HTTP Error code : "
+                        + conn.getResponseCode());
+            }
+            InputStreamReader in = new InputStreamReader(conn.getInputStream());
+            BufferedReader br = new BufferedReader(in);
+            String output;
+            while ((output = br.readLine()) != null) {
+                System.out.println(output);
+            }
+            conn.disconnect();
 
-        Client client = ClientBuilder.newClient(clientConfig);
-        client.register(ThirdClientFilter.class);
-        
-         RestClient clientc = new RestClient(queryc);
+        } catch (Exception e) {
+            System.out.println("Exception in NetClientGet:- " + e);
+        }
+
+     
+         /*RestClient clientc = new RestClient(queryc);
         clientc.Authenticator = basicAuthenticator;
         var requestc = new RestRequest(Method.GET);
         requestc.AddHeader("Postman-Token", "8296a6ab-4616-4eab-8513-5497b39b4a02");
@@ -72,9 +90,9 @@ public class RestAPI {
             Console.WriteLine("Error mesaage is :" + responseErrormMessagec);
         }
 
-
+*/
 
         return EmployeeID;
-    }}
+    }
 
 }

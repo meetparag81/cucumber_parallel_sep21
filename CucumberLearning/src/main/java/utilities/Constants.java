@@ -1,5 +1,6 @@
 package utilities;
 
+import java.util.ArrayList;
 import java.util.Dictionary;
 import java.util.List;
 import java.util.Map;
@@ -7,7 +8,8 @@ import java.util.Map;
 import org.apache.commons.collections4.map.HashedMap;
 
 public class Constants {
-    public static  int WEBDRIVER_TIMEOUT = 60;
+    
+	public static  int WEBDRIVER_TIMEOUT = 60;
     public static  String BROWSER = "chrome";
     public static  String getTimeType = "AvailableTimeType()?$format=json&$expand=timeTypeNav&$select=timeTypeNav/externalName_en_US&$inlinecount=allpages";
     public static String employeeID = "";
@@ -100,7 +102,15 @@ public class Constants {
     public static List<String> positionNumberList;
     public static Map <String,String> dictionary = new HashedMap();
     public static Map<String, String> Positiondictionary = new HashedMap();
+    public static final ArrayList<String> LabelHeader=new ArrayList<String>();
+    public static final ArrayList<String> LabelValue=new ArrayList<String>();
+    public static ArrayList<String> GeneratedFiles=new ArrayList<String>();
 	public static String Sheetname;
+	public static String overallResult;
+	public static int totaloverallPassed;
+	public static int totaloverallFailed;
+	
+	
     public void init()
     {
         employeeID = "";
