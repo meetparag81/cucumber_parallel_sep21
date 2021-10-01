@@ -189,7 +189,7 @@ public class HomePage extends CustomMethods {
 	}
 
 	//To procy the Target User
-	public HomePage ProxyNow(String proxyUser){
+	public PeopleProfilePage ProxyNow(String proxyUser){
 		wait(12000);
 		try {
 			//waitForClickable(sapPopup);
@@ -221,7 +221,7 @@ public class HomePage extends CustomMethods {
 		waitForClickable(OK);
 		click(OK);
 		wait(10000);
-		return this;
+		return new PeopleProfilePage(driver);
 	}
 
 	//To Search for Employee with SHTA Integration

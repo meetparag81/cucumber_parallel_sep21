@@ -68,7 +68,7 @@ public class ESSSteps {
         if (EmployeeID.trim().equals(""))
         {
             URI = "EmpJob?$format=json&$select=employmentNav/jobInfoNav,positionNav,userId,managerId,position,businessUnit,costCenter,customString28,customString36,customString37,customString38,eventReason,employmentNav/isContingentWorker,employmentNav/jobInfoNav/company,employmentNav/jobInfoNav/positionNav/type,employmentNav/jobInfoNav/positionNav/cust_EmploymentType,employmentNav/jobInfoNav/positionNav/cust_EmployeeClass&$inlinecount=allpages&$top=1&$expand=employmentNav/jobInfoNav,positionNav&$filter=employmentNav/isContingentWorker+eq+false +and+employmentNav/jobInfoNav/company+eq+'" + testcompanyCODE + "'+and+employmentNav/jobInfoNav/positionNav/type+eq+'" + ej_PositionType + "'+and+employmentNav/jobInfoNav/positionNav/cust_EmploymentType+eq+'" + EmploymentType + "'+and+employmentNav/jobInfoNav/positionNav/cust_EmployeeClass+eq+'" + cust_EmployeeClass + "'+and+emplStatus+eq+'56734'";
-            Constants.employeeID = RestAPI.GetEmployeeIDwithinyear(URL, URI);
+            Constants.employeeID = RestAPI.GetEmployeeIDwithinyear(URL, CR.Init_prop().getProperty("UATAPIUSERNAME"),CR.Init_prop().getProperty("UATAPIPASSWORD"));
         }
         else
         {
