@@ -1,4 +1,4 @@
-package parallel;
+package testSteps;
 
 import java.io.IOException;
 import java.util.List;
